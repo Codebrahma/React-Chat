@@ -5,8 +5,7 @@ import Home from './components/Home'
 
 const Index = () => (
   <div className={styles.cb}>
-  <Home />
-    Hello React Chat!
+    <Home />
   </div>
 );
 

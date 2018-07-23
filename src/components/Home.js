@@ -1,8 +1,9 @@
 import React from 'react'
+import ChatList from './ChatList'
 
 const Home = () => (
   <div className="home">
-    <div className="home">I am at Home 1</div>
+    <ChatList />
   </div>
 )
 

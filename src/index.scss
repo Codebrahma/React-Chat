@@ -1,3 +1,69 @@
-.cb {
-  color: red;
+@import './root/colors.scss';
+@import './root/font.scss';
+
+.chat-list-container {
+  border: 1px solid $light-blue;
+  background: $very-light-blue;
+  max-width: 300px;
+  .active-users {
+    background: $fb-blue;
+    color: $white;
+    padding: 10px 0;
+    p {
+      margin: 0;
+      padding-left: 15px;
+      font-size: $head-font-size;
+      text-transform: capitalize;
+    }
+  }
+  .chat-list {
+    padding: 0 0 0 20px;
+    overflow-y: scroll;
+    max-height: 80vh;
+    padding-right: 20px;
+    .chat-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px 0;
+      cursor: pointer;
+      .user-avatar {
+        border-radius: 50%;
+      }
+      .user-name {
+        text-transform: capitalize;
+        flex: 2;
+        padding-left: 20px;
+        margin: 0;
+      }
+      span {
+        @extend .user-avatar;
+        height: 8px;
+        width: 8px;
+      }
+      .active {
+        background-color: $green;
+      }
+      .inactive {
+        background-color: $red;
+      }
+    }
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      background: $white;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $grey;
+      border-radius: 5px;
+    }
+  }
+  .search-user {
+    .search-user-input {
+      box-sizing: border-box;
+      padding: 10px;
+      width: 100%;
+    }
+  }
 }
