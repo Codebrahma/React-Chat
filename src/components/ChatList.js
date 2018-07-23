@@ -10,6 +10,32 @@ class ChatList extends Component {
     }
   }
 
+  renderChatUsersList = () => (
+    <div className="chat-list">
+      {
+        chatListData.map(item => (
+          <ChatListItem
+            key={item.id}
+            id={item.id}
+            avatar={item.avatar}
+            name={item.name}
+            onlineStatus={item.onlineStatus}
+            lastSeen={item.lastSeen}
+          />
+        ))
+      }
+    </div>
+  )
+
+  renderChatSearch = () => (
+    <input
+      className="search-user-input"
+      type="text" value={this.state.searchChat}
+      placeholder="Search users..."
+      onChange={this.handleChange}
+    />
+  )
+
   handleChange = (e) => {
     console.log(e.target.value);
     this.setState({
@@ -21,28 +47,11 @@ class ChatList extends Component {
     return (
       <div className={"chat-list-container"}>
         <div className="active-users">
-          <p>Active Users ({chatListData.filter(data => data.status==="active").length})</p>
+          <p>Active Users ({chatListData.filter(data => data.onlineStatus==="online").length})</p>
         </div>
-        <div className="chat-list">
-          {
-            chatListData.map(item => (
-              <ChatListItem
-                key={item.id}
-                id={item.id}
-                avatar={item.avatar}
-                name={item.name}
-                status={item.status}
-              />
-            ))
-          }
-        </div>
+        {this.renderChatUsersList()}
         <div className="search-user">
-          <input
-            className="search-user-input"
-            type="text" value={this.state.searchChat}
-            placeholder="Search users..."
-            onChange={this.handleChange}
-          />
+          {this.renderChatSearch()}
         </div>
       </div>
     )

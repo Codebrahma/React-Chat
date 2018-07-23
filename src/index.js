@@ -4,7 +4,7 @@ import styles from './index.scss';
 import Home from './components/Home'
 
 const Index = () => (
-  <div className={styles.cb}>
+  <div>
     <Home />
   </div>
 );
