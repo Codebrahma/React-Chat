@@ -8,7 +8,7 @@
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production --config webpack.prod.js",
     "lint": "eslint ./ --ext .jsx --ext .js",
-    "test": "mocha --compilers js:babel-core/register --require test/testSetup.js 'test/*.test.js'"
+    "test": "mocha --require babel-core/register --require test/testSetup.js 'test/*.test.js'"
   },
   "keywords": [],
   "author": "",
