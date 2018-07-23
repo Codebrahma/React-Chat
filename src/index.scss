@@ -2,12 +2,12 @@
 @import './root/font.scss';
 
 .chat-list-container {
-  border: 1px solid $light-blue;
-  background: $very-light-blue;
-  max-width: 300px;
+  border: 1px solid $chat-border;
+  background: $chat-bg;
+  max-width: 350px;
   .active-users {
-    background: $fb-blue;
-    color: $white;
+    background: $chat-header;
+    color: $chat-head-text;
     padding: 10px 0;
     p {
       margin: 0;
@@ -17,14 +17,13 @@
     }
   }
   .chat-list {
-    padding: 0 0 0 20px;
+    padding: 0 20px;
     overflow-y: scroll;
     max-height: 80vh;
-    padding-right: 20px;
     .chat-item {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: space-around;
       margin: 10px 0;
       cursor: pointer;
       .user-avatar {
@@ -41,21 +40,22 @@
         height: 8px;
         width: 8px;
       }
-      .active {
-        background-color: $green;
+      .online {
+        background-color: $online;
       }
-      .inactive {
-        background-color: $red;
+      .offline {
+        height: 15px;
+        width: 20px;
       }
     }
     &::-webkit-scrollbar {
       width: 8px;
     }
     &::-webkit-scrollbar-track {
-      background: $white;
+      background: $chat-head-text;
     }
     &::-webkit-scrollbar-thumb {
-      background: $grey;
+      background: $scroll-bg;
       border-radius: 5px;
     }
   }
