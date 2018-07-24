@@ -22,7 +22,7 @@ export const chatListData = [
       {id: 21, avatar: "https://source.unsplash.com/random/50x50", name: "cb", onlineStatus: "offline", lastSeen: new Date(2018, 6, 23, 19, 10, 30, 0)},
       {id: 22, avatar: "https://source.unsplash.com/random/50x50", name: "some other", onlineStatus: "online", lastSeen: new Date()},
       {id: 23, avatar: "https://source.unsplash.com/random/50x50", name: "why not", onlineStatus: "online", lastSeen: new Date()},
-      {id: 24, avatar: "https://source.unsplash.com/random/50x50", name: "sure", onlineStatus: "offline", lastSeen: new Date(2018, 6, 24, 9, 0, 30, 0)},
+      {id: 24, avatar: "https://source.unsplash.com/random/50x50", name: "sure", onlineStatus: "offline", lastSeen: new Date(2018, 6, 24, 9, 10, 30, 0)},
       {id: 25, avatar: "https://source.unsplash.com/random/50x50", name: "by default", onlineStatus: "online", lastSeen: new Date()},
       {id: 26, avatar: "https://source.unsplash.com/random/50x50", name: "dummy", onlineStatus: "online", lastSeen: new Date()},
       {id: 27, avatar: "https://source.unsplash.com/random/50x50", name: "data", onlineStatus: "online", lastSeen: new Date()},
@@ -30,7 +30,7 @@ export const chatListData = [
       {id: 29, avatar: "https://source.unsplash.com/random/50x50", name: "i love WD", onlineStatus: "online", lastSeen: new Date()},
       {id: 30, avatar: "https://source.unsplash.com/random/50x50", name: "hurrah", onlineStatus: "online", lastSeen: new Date()},
       {id: 31, avatar: "https://source.unsplash.com/random/50x50", name: "are you", onlineStatus: "offline", lastSeen: new Date(2018, 6, 23, 14, 50, 30, 0)},
-      {id: 32, avatar: "https://source.unsplash.com/random/50x50", name: "who else", onlineStatus: "offline", lastSeen: new Date(2018, 6, 24, 11, 40, 30, 0)},
+      {id: 32, avatar: "https://source.unsplash.com/random/50x50", name: "who else", onlineStatus: "offline", lastSeen: new Date(2018, 6, 24, 10, 10, 30, 0)},
       {id: 33, avatar: "https://source.unsplash.com/random/50x50", name: "finally", onlineStatus: "offline", lastSeen: new Date(2018, 6, 23, 20, 33, 30, 0)},
       {id: 34, avatar: "https://source.unsplash.com/random/50x50", name: "last name", onlineStatus: "online", lastSeen: new Date()},
   ]
