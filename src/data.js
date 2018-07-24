@@ -1,4 +1,4 @@
-export const chatListData = [
+export const userData = [
       {id: 1, avatar: "https://source.unsplash.com/random/50x50", name: "hello", onlineStatus: "online", lastSeen: new Date(), lastSeen: new Date()},
       {id: 2, avatar: "https://source.unsplash.com/random/50x50", name: "how", onlineStatus: "online", lastSeen: new Date()},
       {id: 3, avatar: "https://source.unsplash.com/random/50x50", name: "stephen", onlineStatus: "offline", lastSeen: new Date(2018, 6, 23, 23, 13, 30, 0)},

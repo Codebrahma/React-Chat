@@ -1,61 +1,18 @@
-import React, { Component } from 'react'
-import ChatListItem from './ChatListItem'
-import {chatListData} from '../data'
+import React from 'react'
+import PropTypes from 'prop-types'
+import RenderChatList from './RenderChatList'
 
-class ChatList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchChat: '',
-    }
-  }
+const ChatList = (props) => (
+  <div>
+    <props.customList userData={props.userData}/>
+  </div>
+)
 
-  renderChatUsersList = () => (
-    <div className="chat-list">
-      {
-        chatListData.map(item => (
-          <ChatListItem
-            key={item.id}
-            id={item.id}
-            avatar={item.avatar}
-            name={item.name}
-            onlineStatus={item.onlineStatus}
-            lastSeen={item.lastSeen}
-          />
-        ))
-      }
-    </div>
-  )
-
-  renderChatSearch = () => (
-    <input
-      className="search-user-input"
-      type="text" value={this.state.searchChat}
-      placeholder="Search users..."
-      onChange={this.handleChange}
-    />
-  )
-
-  handleChange = (e) => {
-    console.log(e.target.value);
-    this.setState({
-      searchChat: e.target.value,
-    })
-  }
-
-  render() {
-    return (
-      <div className={"chat-list-container"}>
-        <div className="active-users">
-          <p>Active Users ({chatListData.filter(data => data.onlineStatus==="online").length})</p>
-        </div>
-        {this.renderChatUsersList()}
-        <div className="search-user">
-          {this.renderChatSearch()}
-        </div>
-      </div>
-    )
-  }
+ChatList.propTypes = {
+  customList: PropTypes.func.isRequired,
+}
+ChatList.defaultProps = {
+  customList: RenderChatList,
 }
 
 export default ChatList
