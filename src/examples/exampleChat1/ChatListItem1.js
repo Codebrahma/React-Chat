@@ -10,8 +10,11 @@ const ChatListItem1 = (props) => {
   return (
     <div className="example-item1">
       <img src={props.avatar} className="example-avatar1" alt={props.name.slice(0,1).toUpperCase()}/>
-      {<span className={"online-1"}></span>}
-      <span className="example-name1">{props.name}</span>
+      <span className={`${props.onlineStatus}-1`}></span>
+      <div className="example-item-body1">
+        <span className="example-name1">{props.name}</span>
+        <span className="example-preview1">{props.previewMessage}</span>
+      </div>
   </div>
 )
 }

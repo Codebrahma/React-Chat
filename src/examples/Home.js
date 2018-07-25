@@ -30,9 +30,14 @@ class Home extends Component {
       <div className="home">
         <ChatListProvider
           userData={userData}
+          chatProviderClass="example-provider1"
           handleSearchChange={this.handleSearchChange}
         >
-        
+          <ChatListHeader1 />
+          <ChatList
+            customChatListItem={ChatListItem1}
+            chatListClass="example-list1"
+          />
         </ChatListProvider>
       </div>
     )

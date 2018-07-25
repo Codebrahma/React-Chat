@@ -1,7 +1,7 @@
 // @import './scss/fontawesome.scss';
 // @import './scss/solid.scss';
 .example-provider1 {
-  max-width: 300px;
+  max-width: 350px;
   border: 1px solid #ccc;
   .example-header1 {
     background: #fff;
@@ -11,7 +11,7 @@
     box-sizing: border-box;
     width: 100%;
     padding: 0 20px;
-    height: 45px;
+    height: 50px;
     margin: 2px 0;
     text-transform: uppercase;
     box-shadow: 0 10px 5px -5px #eff0f4;
@@ -36,21 +36,34 @@
         border: 3px solid #fff;
         box-shadow: 0 0 5px rgba(0,0,0,0.5);
       }
-      .example-name1 {
-        text-transform: capitalize;
+      .example-item-body1 {
+        display: flex;
+        flex-direction: column;
         flex: 2;
-        padding-left: 20px;
         margin: 0;
+        .example-name1 {
+          text-transform: capitalize;
+          font-weight: bold;
+          color: $text-color;
+        }
+        .example-preview1 {
+          font-size: 14px;
+          color: #606470;
+        }
       }
       .online-1 {
         border-radius: 50%;
         border: 2px solid #fff;
-        background: green;
+        background: $online;
         padding: 5px;
         box-shadow: 0 0 5px rgba(0,0,0,0.5);
         position: relative;
         right: 22px;
         top: 20px;
+      }
+      .offline-1 {
+        @extend .online-1;
+        visibility: hidden;
       }
     }
     &::-webkit-scrollbar {
