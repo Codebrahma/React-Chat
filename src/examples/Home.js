@@ -2,19 +2,14 @@ import React, { Component } from 'react'
 import {userData} from '../data'
 import {
     ChatList,
-    ChatListWrapper,
+    ChatListProvider,
     ChatListHeader,
     ChatSearch,
     RenderChatHeader,
     RenderChatList,
     RenderChatSearch,
   } from '../components/index'
-
-const Dummy = () => (
-  <div>
-    DummyyData
-  </div>
-)
+import RenderChatHeader1 from './exampleChat1/RenderChatHeader1'
 
 class Home extends Component {
   constructor(props) {
@@ -33,17 +28,14 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
-        <ChatListWrapper
+        <ChatListProvider
           userData={userData}
-          customHeader={RenderChatHeader}
-          customList={RenderChatList}
-          customSearch={RenderChatSearch}
           handleSearchChange={this.handleSearchChange}
         >
           <ChatListHeader />
           <ChatList />
           <ChatSearch />
-        </ChatListWrapper>
+        </ChatListProvider>
       </div>
     )
   }

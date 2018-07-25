@@ -4,23 +4,24 @@ import {
     ChatListHeader,
     ChatList,
     ChatSearch,
-    ChatListItem
+    ChatListItem,
   } from './index.js'
+import classNames from 'classnames'
 
-const ChatListWrapper = (props) => {
+const ChatListProvider = (props) => {
+  console.log(props.children)
   return (
-    <div className="chat-list-container">
+    <div className={props.wrapperClass}>
       {
         props.children
           ? (
-            props.children.map((child, index) => React.cloneElement(child, {...props, key: index}))
-          )
+              props.children.map((child, index) => React.cloneElement(child, {...props, key: index}))
+            )
           : (
               <div>
                 { props.customHeader
                     ? <props.customHeader userData={props.userData} />
                     : ( <ChatListHeader
-                          customHeader={props.customHeader}
                           userData={props.userData}
                         />
                       )
@@ -28,7 +29,6 @@ const ChatListWrapper = (props) => {
                 { props.customList
                     ? <props.customList userData={props.userData} />
                     : ( <ChatList
-                          customList={props.customList}
                           userData={props.userData}
                         />
                     )
@@ -37,7 +37,6 @@ const ChatListWrapper = (props) => {
                   props.customSearch
                     ? <props.customSearch handleSearchChange={props.handleSearchChange}/>
                     : ( <ChatSearch
-                          customSearch={props.customSearch}
                           handleSearchChange={props.handleSearchChange}
                         />
                     )
@@ -49,12 +48,17 @@ const ChatListWrapper = (props) => {
   )
 }
 
-ChatListWrapper.propTypes = {
-  customHeader: PropTypes.func.isRequired,
-  customList: PropTypes.func.isRequired,
-  customSearch: PropTypes.func.isRequired,
+ChatListProvider.propTypes = {
+  customHeader: PropTypes.func,
+  customList: PropTypes.func,
+  customSearch: PropTypes.func,
   userData: PropTypes.array.isRequired,
   handleSearchChange: PropTypes.func.isRequired,
+  wrapperClass: PropTypes.string,
 }
 
-export default ChatListWrapper
+ChatListProvider.defaultProps = {
+  wrapperClass: "chat-list-wrapper",
+}
+
+export default ChatListProvider
