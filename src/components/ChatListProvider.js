@@ -1,46 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-    ChatListHeader,
-    ChatList,
-    ChatSearch,
     ChatListItem,
   } from './index.js'
+import ChatListHeader from './ChatListHeader'
+import ChatList from './ChatList'
+import ChatListSearch from './ChatListSearch'
 import classNames from 'classnames'
 
 const ChatListProvider = (props) => {
-  console.log(props.children)
   return (
-    <div className={props.wrapperClass}>
+    <div className={props.chatProviderClass}>
       {
         props.children
-          ? (
-              props.children.map((child, index) => React.cloneElement(child, {...props, key: index}))
+          ? ( props.children instanceof Array
+                ?  props.children.map((child, index) => React.cloneElement(child, {...props, key: index}))
+                :  React.cloneElement(props.children, {...props})
             )
           : (
               <div>
-                { props.customHeader
-                    ? <props.customHeader userData={props.userData} />
-                    : ( <ChatListHeader
-                          userData={props.userData}
-                        />
-                      )
-                }
-                { props.customList
-                    ? <props.customList userData={props.userData} />
-                    : ( <ChatList
-                          userData={props.userData}
-                        />
-                    )
-                }
-                {
-                  props.customSearch
-                    ? <props.customSearch handleSearchChange={props.handleSearchChange}/>
-                    : ( <ChatSearch
-                          handleSearchChange={props.handleSearchChange}
-                        />
-                    )
-                }
+                <props.customHeader userData={props.userData} />
+                <props.customList userData={props.userData} />
+                <props.customSearch handleSearchChange={props.handleSearchChange}/>
               </div>
             )
       }
@@ -54,11 +35,14 @@ ChatListProvider.propTypes = {
   customSearch: PropTypes.func,
   userData: PropTypes.array.isRequired,
   handleSearchChange: PropTypes.func.isRequired,
-  wrapperClass: PropTypes.string,
+  chatProviderClass: PropTypes.string,
 }
 
 ChatListProvider.defaultProps = {
-  wrapperClass: "chat-list-wrapper",
+  chatProviderClass: "chat-list-wrapper",
+  customHeader: ChatListHeader,
+  customList: ChatList,
+  customSearch: ChatListSearch,
 }
 
 export default ChatListProvider

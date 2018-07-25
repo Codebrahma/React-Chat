@@ -1,22 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import  RenderChatHeader  from './RenderChatHeader'
 
-const ChatListHeader = (props) => {
-  return (
-    <div>
-      <props.customHeader  userData={props.userData}/>
-    </div>
-  )
-}
-
+const ChatListHeader = (props) => (
+  <div className={props.chatHeaderClass}>
+    <span>Active Users ({props.userData.filter(data => data.onlineStatus==="online").length})</span>
+  </div>
+)
 
 ChatListHeader.propTypes = {
-  customHeader: PropTypes.func.isRequired,
+  userData: PropTypes.array.isRequired,
+  chatHeaderClass: PropTypes.string,
 }
 
 ChatListHeader.defaultProps = {
-  customHeader: RenderChatHeader,
+  userData: [],
+  chatHeaderClass: "active-users",
 }
 
 export default ChatListHeader

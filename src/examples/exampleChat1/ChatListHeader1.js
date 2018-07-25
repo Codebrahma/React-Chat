@@ -1,10 +1,10 @@
 import React from 'react'
 
-const RenderChatHeader1 = ({userData}) => (
+const ChatListHeader1 = ({userData}) => (
   <div className="active-users">
     <span>Users</span>
   </div>
 )
 
 
-export default RenderChatHeader1
+export default ChatListHeader1

@@ -7,8 +7,9 @@ const ChatListItem = (props) => {
   const lastSeenMinutes = Math.ceil(lastSeenTime / (1000*60))
   const lastSeenHours = Math.floor(lastSeenMinutes / 60)
   const lastSeenDays = Math.floor(lastSeenHours / 24)
+  
   return (
-    <div id={props.id} className="chat-item">
+    <div id={props.id} className="user-item">
       <img src={props.avatar} className="user-avatar" alt={props.name.slice(0,1).toUpperCase()}/>
       <span className="user-name">{props.name}</span>
       <span className={props.onlineStatus}>
