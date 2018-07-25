@@ -33,11 +33,11 @@ class Home extends Component {
           chatProviderClass="example-provider1"
           handleSearchChange={this.handleSearchChange}
         >
-          <ChatListHeader1 />
-          <ChatList
-            customChatListItem={ChatListItem1}
-            chatListClass="example-list1"
-          />
+        <ChatListHeader1 />
+        <ChatList
+          customChatListItem={ChatListItem1}
+          chatListClass="example-list1"
+        />
         </ChatListProvider>
       </div>
     )

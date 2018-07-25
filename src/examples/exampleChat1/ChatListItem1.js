@@ -7,6 +7,7 @@ const ChatListItem1 = (props) => {
   const lastSeenMinutes = Math.ceil(lastSeenTime / (1000*60))
   const lastSeenHours = Math.floor(lastSeenMinutes / 60)
   const lastSeenDays = Math.floor(lastSeenHours / 24)
+
   return (
     <div className="example-item1">
       <img src={props.avatar} className="example-avatar1" alt={props.name.slice(0,1).toUpperCase()}/>
@@ -15,6 +16,7 @@ const ChatListItem1 = (props) => {
         <span className="example-name1">{props.name}</span>
         <span className="example-preview1">{props.previewMessage}</span>
       </div>
+      <span className="example-time1">{`${lastSeen.getHours()}:${lastSeen.getMinutes()}`}</span>
   </div>
 )
 }
