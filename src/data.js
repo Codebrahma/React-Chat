@@ -1,6 +1,6 @@
 export const userData = [{
     id: 1,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-1.jpeg"),
     name: "hello",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -8,7 +8,7 @@ export const userData = [{
   },
   {
     id: 2,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-2.jpeg"),
     name: "how",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -16,7 +16,7 @@ export const userData = [{
   },
   {
     id: 3,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-3.jpeg"),
     name: "stephen",
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 23, 23, 13, 30, 0),
@@ -24,7 +24,7 @@ export const userData = [{
   },
   {
     id: 4,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-4.jpeg"),
     name: "hawking",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -32,7 +32,7 @@ export const userData = [{
   },
   {
     id: 5,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-5.jpeg"),
     name: "robert",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -40,7 +40,7 @@ export const userData = [{
   },
   {
     id: 6,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-6.jpeg"),
     name: "einstein",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -48,7 +48,7 @@ export const userData = [{
   },
   {
     id: 7,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-7.jpeg"),
     name: "nasa",
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 23, 11, 33, 30, 0),
@@ -56,7 +56,7 @@ export const userData = [{
   },
   {
     id: 8,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-8.jpeg"),
     name: "ISRO",
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 23, 11, 39, 30, 0),
@@ -64,7 +64,7 @@ export const userData = [{
   },
   {
     id: 9,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-9.jpeg"),
     name: "space",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -72,7 +72,7 @@ export const userData = [{
   },
   {
     id: 10,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-10.jpeg"),
     name: "react",
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 24, 6, 33, 30, 0),
@@ -80,7 +80,7 @@ export const userData = [{
   },
   {
     id: 11,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-11.jpeg"),
     name: "native",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -88,7 +88,7 @@ export const userData = [{
   },
   {
     id: 12,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-12.jpeg"),
     name: "angular",
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 23, 1, 33, 30, 0),
@@ -96,7 +96,7 @@ export const userData = [{
   },
   {
     id: 13,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-13.jpeg"),
     name: "html",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -104,7 +104,7 @@ export const userData = [{
   },
   {
     id: 14,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-14.jpeg"),
     name: "css",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -112,7 +112,7 @@ export const userData = [{
   },
   {
     id: 15,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-15.jpeg"),
     name: "javascript",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -120,7 +120,7 @@ export const userData = [{
   },
   {
     id: 16,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-16.jpeg"),
     name: "vue",
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 24, 10, 33, 30, 0),
@@ -128,7 +128,7 @@ export const userData = [{
   },
   {
     id: 17,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-17.jpeg"),
     name: "redux",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -136,7 +136,7 @@ export const userData = [{
   },
   {
     id: 18,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-1.jpeg"),
     name: "web",
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 23, 5, 45, 30, 0),
@@ -144,7 +144,7 @@ export const userData = [{
   },
   {
     id: 19,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-2.jpeg"),
     name: "development",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -152,7 +152,7 @@ export const userData = [{
   },
   {
     id: 20,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-3.jpeg"),
     name: "codebrahma",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -160,7 +160,7 @@ export const userData = [{
   },
   {
     id: 21,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-4.jpeg"),
     name: "cb",
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 23, 19, 10, 30, 0),
@@ -168,7 +168,7 @@ export const userData = [{
   },
   {
     id: 22,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-5.jpeg"),
     name: "some other",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -176,7 +176,7 @@ export const userData = [{
   },
   {
     id: 23,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-6.jpeg"),
     name: "why not",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -184,7 +184,7 @@ export const userData = [{
   },
   {
     id: 24,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-7.jpeg"),
     name: "sure",
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 24, 9, 10, 30, 0),
@@ -192,7 +192,7 @@ export const userData = [{
   },
   {
     id: 25,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-8.jpeg"),
     name: "by default",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -200,7 +200,7 @@ export const userData = [{
   },
   {
     id: 26,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-9.jpeg"),
     name: "dummy",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -208,7 +208,7 @@ export const userData = [{
   },
   {
     id: 27,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-10.jpeg"),
     name: "data",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -216,7 +216,7 @@ export const userData = [{
   },
   {
     id: 28,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-11.jpeg"),
     name: "wow",
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 23, 8, 20, 30, 0),
@@ -224,7 +224,7 @@ export const userData = [{
   },
   {
     id: 29,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-12.jpeg"),
     name: "i love WD",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -232,7 +232,7 @@ export const userData = [{
   },
   {
     id: 30,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-13.jpeg"),
     name: "hurrah",
     onlineStatus: "online",
     lastSeen: new Date(),
@@ -240,7 +240,7 @@ export const userData = [{
   },
   {
     id: 31,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-14.jpeg"),
     name: "are you",
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 23, 14, 50, 30, 0),
@@ -248,7 +248,7 @@ export const userData = [{
   },
   {
     id: 32,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-15.jpeg"),
     name: "who else",
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 24, 10, 10, 30, 0),
@@ -256,7 +256,7 @@ export const userData = [{
   },
   {
     id: 33,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-16.jpeg"),
     name: "finally",
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 23, 20, 33, 30, 0),
@@ -264,7 +264,7 @@ export const userData = [{
   },
   {
     id: 34,
-    avatar: "https://source.unsplash.com/random/50x50",
+    avatar: require("./images/user-17.jpeg"),
     name: "last name",
     onlineStatus: "online",
     lastSeen: new Date(),
