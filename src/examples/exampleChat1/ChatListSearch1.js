@@ -1,12 +1,12 @@
 import React from 'react'
 import Icon from '../Icon'
 
-const ChatListHeader1 = ({userData}) => (
+const ChatListSearch1 = ({userData}) => (
   <div className="example-header1">
     <span><Icon iconClass="fa-bars" /></span>
-    Users
+    Search
   </div>
 )
 
 
-export default ChatListHeader1
+export default ChatListSearch1

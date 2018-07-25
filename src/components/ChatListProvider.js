@@ -13,7 +13,7 @@ const ChatListProvider = (props) => {
     <div className={props.chatProviderClass}>
       {
         props.children
-          ? ( props.children instanceof Array
+          ? ( Array.isArray(props.children)
                 ?  props.children.map((child, index) => React.cloneElement(child, {...props, key: index}))
                 :  React.cloneElement(props.children, {...props})
             )

@@ -6,7 +6,7 @@ const ChatList = (props) => (
     <div className={props.chatListClass}>
       {
         props.userData.map(item => (
-          <props.chatListItem
+          <props.customChatListItem
             key={item.id}
             id={item.id}
             avatar={item.avatar}
@@ -22,13 +22,13 @@ const ChatList = (props) => (
 
 ChatList.propTypes = {
   userData: PropTypes.array.isRequired,
-  chatListItem: PropTypes.func,
+  customChatListItem: PropTypes.func,
   chatListClass: PropTypes.string,
 }
 
 ChatList.defaultProps = {
   userData: [],
-  chatListItem: ChatListItem,
+  customChatListItem: ChatListItem,
   chatListClass: "user-list",
 }
 

@@ -14,7 +14,7 @@ ChatListHeader.propTypes = {
 
 ChatListHeader.defaultProps = {
   userData: [],
-  chatHeaderClass: "active-users",
+  chatHeaderClass: "chat-list-header",
 }
 
 export default ChatListHeader

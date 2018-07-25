@@ -7,6 +7,9 @@ import {
     ChatListSearch,
   } from '../components/index'
 import ChatListHeader1 from './exampleChat1/ChatListHeader1'
+import ChatList1 from './exampleChat1/ChatList1'
+import ChatListItem1 from './exampleChat1/ChatListItem1'
+import ChatListSearch1 from './exampleChat1/ChatListSearch1'
 
 class Home extends Component {
   constructor(props) {
@@ -29,9 +32,7 @@ class Home extends Component {
           userData={userData}
           handleSearchChange={this.handleSearchChange}
         >
-          <ChatListHeader />
-          <ChatListSearch />
-          <ChatList />
+        
         </ChatListProvider>
       </div>
     )
