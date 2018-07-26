@@ -30,7 +30,7 @@ class Home extends Component {
   }
   render() {
     return (
-      <DemoPage/>
+      <DemoPage userData={userData}/>
     )
   }
 }

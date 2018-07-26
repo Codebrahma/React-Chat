@@ -1,21 +1,17 @@
 import React from 'react';
 import { ChatListProvider, ChatList, ChatListSearch } from '../../components';
-import { userData } from '../../data';
 import DemoChatWindowHeader from './DemoChatListHeader';
+import WindowIndex from '../chat-window'
 
 
 const DemoChatWindowBox = (props) => {
     return (
         <div className="demo-chat-window-box">
             <div className="demo-chat-window">
-                <ChatListProvider userData={userData} />
+                <WindowIndex userData={props.userData} {...props}/>
             </div>
             <div className="demo-chat-window">
-                <ChatListProvider userData={userData}>
-                    <DemoChatWindowHeader userId={props.userId}/>
-                    <ChatList />
-                    <ChatListSearch />
-                </ChatListProvider>
+                <WindowIndex userData={props.userData} {...props}/>
             </div>
         </div>
     )

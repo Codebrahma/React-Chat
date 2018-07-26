@@ -14,6 +14,19 @@ class WindowIndex extends Component {
       inputMessage: '',
     }
   }
+  componentDidMount() {
+    console.log(this.props.userId,'on mount')
+    this.setState({
+      currentUserId: this.props.userId,
+    })
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps.userId,'on receive updated')
+    this.setState({
+      currentUserId: nextProps.userId,
+    })
+  }
 
   handleInputMessage = (e) => {
     this.setState({
@@ -33,12 +46,12 @@ class WindowIndex extends Component {
   render() {
     return (
       <ChatListProvider
-        userData={this.props.userData}
+        userData={this.props.userData.find((user) => user.id === this.props.userId)}
         chatProviderClass="chat-window-container"
         handleInputMessage={this.handleInputMessage}
         onSend={this.onSend}
         inputValue={this.state.inputMessage}
-        >
+      >
         <ChatWindowHeader />
         <ChatWindowBody />
         <ChatWindowSend  />
