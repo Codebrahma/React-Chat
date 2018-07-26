@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {userData} from '../data'
+import { userData } from '../data'
 import {
     ChatListProvider,
     ChatListHeader,
@@ -12,6 +12,7 @@ import ChatListItem1 from './exampleChat1/ChatListItem1'
 import ChatListSearch1 from './exampleChat1/ChatListSearch1'
 import ChatWindowHeader from './chat-window/ChatWindowHeader'
 import WindowIndex from './chat-window/index'
+import DemoPage from './demoPage';
 
 class Home extends Component {
   constructor(props) {
@@ -29,9 +30,7 @@ class Home extends Component {
   }
   render() {
     return (
-      <div className="home">
-        <WindowIndex userData={userData}/>
-      </div>
+      <DemoPage/>
     )
   }
 }

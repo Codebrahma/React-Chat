@@ -2,6 +2,11 @@
 @import './root/font.scss';
 @import './examples/exampleChat1/example_1.scss';
 @import './examples/chat-window/chat-window-styles.scss';
+@import './examples/exampleChat2/styles.scss';
+
+  body {
+    margin: 0px;
+  }
 
 .chat-list-wrapper {
   border: 1px solid $chat-border;
@@ -23,7 +28,7 @@
   .user-list {
     padding: 0 20px;
     overflow-y: scroll;
-    max-height: 80vh;
+    max-height: 60vh;
     color: $text-color;
     .user-item {
       display: flex;
