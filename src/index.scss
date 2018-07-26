@@ -1,6 +1,7 @@
 @import './root/colors.scss';
 @import './root/font.scss';
 @import './examples/exampleChat1/example_1.scss';
+@import './examples/chat-window/chat-window-styles.scss';
 
 .chat-list-wrapper {
   border: 1px solid $chat-border;

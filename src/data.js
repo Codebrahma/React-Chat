@@ -5,6 +5,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum dolor sit amet.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 2,
@@ -13,6 +20,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 3,
@@ -21,6 +35,13 @@ export const userData = [{
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 23, 23, 13, 30, 0),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 4,
@@ -29,6 +50,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 5,
@@ -37,6 +65,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 6,
@@ -45,6 +80,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 7,
@@ -53,6 +95,13 @@ export const userData = [{
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 23, 11, 33, 30, 0),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 8,
@@ -61,6 +110,13 @@ export const userData = [{
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 23, 11, 39, 30, 0),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 9,
@@ -69,6 +125,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 10,
@@ -77,6 +140,13 @@ export const userData = [{
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 24, 6, 33, 30, 0),
     previewMessage: "Lorem sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 11,
@@ -85,6 +155,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 12,
@@ -93,6 +170,13 @@ export const userData = [{
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 23, 1, 33, 30, 0),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 13,
@@ -101,6 +185,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 14,
@@ -109,6 +200,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum dolor sit amet elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 15,
@@ -117,6 +215,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum dolor sit amet, adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 16,
@@ -125,6 +230,13 @@ export const userData = [{
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 24, 10, 33, 30, 0),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 17,
@@ -133,6 +245,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 18,
@@ -141,6 +260,13 @@ export const userData = [{
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 23, 5, 45, 30, 0),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 19,
@@ -149,6 +275,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 20,
@@ -157,6 +290,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 21,
@@ -165,6 +305,13 @@ export const userData = [{
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 23, 19, 10, 30, 0),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 22,
@@ -173,6 +320,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 23,
@@ -181,6 +335,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 24,
@@ -189,6 +350,13 @@ export const userData = [{
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 24, 9, 10, 30, 0),
     previewMessage: "Adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 25,
@@ -197,6 +365,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 26,
@@ -205,6 +380,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 27,
@@ -213,6 +395,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 28,
@@ -221,6 +410,13 @@ export const userData = [{
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 23, 8, 20, 30, 0),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 29,
@@ -229,6 +425,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 30,
@@ -237,6 +440,13 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 31,
@@ -245,6 +455,13 @@ export const userData = [{
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 23, 14, 50, 30, 0),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 32,
@@ -253,6 +470,13 @@ export const userData = [{
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 24, 10, 10, 30, 0),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 33,
@@ -261,6 +485,13 @@ export const userData = [{
     onlineStatus: "offline",
     lastSeen: new Date(2018, 6, 23, 20, 33, 30, 0),
     previewMessage: "Amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
   {
     id: 34,
@@ -269,5 +500,12 @@ export const userData = [{
     onlineStatus: "online",
     lastSeen: new Date(),
     previewMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    messages: [
+      {
+        messageId: 1,
+        text: 'test',
+        receivedFrom: {},
+      },
+    ]
   },
 ]

@@ -10,7 +10,7 @@ import classNames from 'classnames'
 
 const ChatListProvider = (props) => {
   return (
-    <div className={`chat-list-wrapper ${props.chatProviderClass}`}>
+    <div className={`${props.chatProviderClass} chat-list-wrapper`}>
       {
         props.children
           ? ( Array.isArray(props.children)
@@ -34,12 +34,11 @@ ChatListProvider.propTypes = {
   customList: PropTypes.func,
   customSearch: PropTypes.func,
   userData: PropTypes.array.isRequired,
-  handleSearchChange: PropTypes.func.isRequired,
+  handleSearchChange: PropTypes.func,
   chatProviderClass: PropTypes.string,
 }
 
 ChatListProvider.defaultProps = {
-  chatProviderClass: "",
   customHeader: ChatListHeader,
   customList: ChatList,
   customSearch: ChatListSearch,
