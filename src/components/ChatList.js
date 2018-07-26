@@ -13,6 +13,7 @@ const ChatList = (props) => (
             name={item.name}
             onlineStatus={item.onlineStatus}
             lastSeen={item.lastSeen}
+            {...props}
             {...item}
           />
         ))

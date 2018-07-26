@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {userData} from '../data'
+import { userData } from '../data'
 import {
     ChatListProvider,
     ChatListHeader,
@@ -12,6 +12,20 @@ import ChatListItem1 from './exampleChat1/ChatListItem1'
 import ChatListSearch1 from './exampleChat1/ChatListSearch1'
 import ChatWindowHeader from './chat-window/ChatWindowHeader'
 import WindowIndex from './chat-window/index'
+  ChatListProvider,
+  // ChatListHeader,
+  ChatList,
+  ChatListSearch,
+} from '../components'
+// import ChatListHeader1 from './exampleChat1/ChatListHeader1'
+// import ChatList1 from './exampleChat1/ChatList1'
+// import ChatListItem1 from './exampleChat1/ChatListItem1'
+// import ChatListSearch1 from './exampleChat1/ChatListSearch1'
+
+import ChatListHeader from './exampleChat2/ChatListHeader';
+import ChatListItem from './exampleChat2/chatListItem';
+import DemoPage from './demoPage';
+// import ChatList from './exampleChat2/ChatList';
 
 class Home extends Component {
   constructor(props) {
@@ -32,6 +46,20 @@ class Home extends Component {
       <div className="home">
         <WindowIndex userData={userData}/>
       </div>
+      <DemoPage />
+      // <div className="home">
+      //   {/* <ChatListProvider
+      //     userData={userData}
+      //     chatProviderClass="example-provider1"
+      //     handleSearchChange={this.handleSearchChange}
+      //   >
+      //   <ChatListHeader1 />
+      //   <ChatList
+      //     customChatListItem={ChatListItem1}
+      //     chatListClass="example-list1"
+      //   />
+      //   </ChatListProvider> */}
+      // </div>
     )
   }
 }

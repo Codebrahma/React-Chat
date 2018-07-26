@@ -20,7 +20,7 @@ const ChatListProvider = (props) => {
           : (
               <div>
                 <props.customHeader userData={props.userData} />
-                <props.customList userData={props.userData} />
+                <props.customList userData={props.userData} {...props}/>
                 <props.customSearch handleSearchChange={props.handleSearchChange}/>
               </div>
             )
