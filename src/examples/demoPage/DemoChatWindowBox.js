@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChatListProvider, ChatListHeader, ChatList, ChatListSearch } from '../../components';
+import { ChatListProvider, ChatList, ChatListSearch } from '../../components';
 import { userData } from '../../data';
 import DemoChatWindowHeader from './DemoChatListHeader';
 

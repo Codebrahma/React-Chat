@@ -22,6 +22,8 @@ import WindowIndex from './chat-window/index'
 // import ChatListItem1 from './exampleChat1/ChatListItem1'
 // import ChatListSearch1 from './exampleChat1/ChatListSearch1'
 
+import ExampleChat2 from './exampleChat2';
+// Import demo page for chat themes
 import DemoPage from './demoPage';
 
 class Home extends Component {
@@ -44,6 +46,12 @@ class Home extends Component {
         <WindowIndex userData={userData}/>
       </div>
       <DemoPage />
+
+      // <ExampleChat2 />
+
+      // <ChatListProvider
+      //   userData={userData}
+      // />
       // <div className="home">
       //   {/* <ChatListProvider
       //     userData={userData}

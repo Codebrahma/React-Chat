@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import DemoChatButton from './DemoChatButton';
 import { ChatListProvider, ChatListHeader, ChatList } from '../../components';
 import { userData } from '../../data';
-import DemoChatListItem from './DemoChatListItem';
 
 class DemoChatList extends Component {
 
@@ -26,9 +25,6 @@ class DemoChatList extends Component {
                     this.state.open &&
                     <div className="demo-chat-list">
                         <ChatListProvider userData={userData} handleChatItemClick={(id) => this.props.updateChatWindow(id)}>
-                            {/* <ChatListHeader />
-                            <ChatList
-                                customChatListItem={DemoChatListItem} /> */}
                         </ChatListProvider>
                     </div>
                 }
