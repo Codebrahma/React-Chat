@@ -1,8 +1,8 @@
 // @import './scss/fontawesome.scss';
 // @import './scss/solid.scss';
 .example-provider1 {
-  max-width: 350px;
-  border: 1px solid #ccc;
+  max-width: 350px !important;
+  border: 1px solid #ccc !important;
   .example-header1 {
     background: #fff;
     display: flex;

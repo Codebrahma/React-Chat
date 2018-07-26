@@ -34,6 +34,7 @@ class Home extends Component {
           handleSearchChange={this.handleSearchChange}
         >
         <ChatListHeader1 />
+        <ChatListSearch />
         <ChatList
           customChatListItem={ChatListItem1}
           chatListClass="example-list1"
