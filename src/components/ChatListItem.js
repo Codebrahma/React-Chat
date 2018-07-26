@@ -33,6 +33,7 @@ ChatListItem.propTypes = {
   avatar: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onlineStatus: PropTypes.string.isRequired,
+  handleChatItemClick: PropTypes.func.isRequired
 }
 
 export default ChatListItem

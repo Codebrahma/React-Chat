@@ -19,17 +19,13 @@ class DemoChatList extends Component {
         })
     }
 
-    handleItemClick = (id) => {
-        console.log(id);
-    }
-
     render() {
         return (
-            <div className="demo-chat-list-box">
+            <div>
                 {
                     this.state.open &&
                     <div className="demo-chat-list">
-                        <ChatListProvider userData={userData} handleChatItemClick={this.handleItemClick}>
+                        <ChatListProvider userData={userData} handleChatItemClick={(id) => this.props.updateChatWindow(id)}>
                             {/* <ChatListHeader />
                             <ChatList
                                 customChatListItem={DemoChatListItem} /> */}

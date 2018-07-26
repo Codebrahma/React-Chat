@@ -10,30 +10,46 @@
         background: rgba(198, 255, 0, 0.50);
         padding: 0.25%;
     }
-    // .demo-chat-list-box {
-        
-        .demo-chat-list {
-            box-shadow: 2px 2px 7px 1px rgba(0,0,0,0.5);
-            position: absolute;
-            bottom: 0.5em;
-            right: 0.5em;
-            height: auto;
-            width: 250px;
-            // position: relative;
-            bottom: 55px;
-        }
 
-        .chat-popup-button {
-            width: 45px;
-            height: 45px;
-            position: absolute;
-            bottom: 0.5em;
-            right: 0.5em;
-            border-radius: 50%;
-            justify-content: space-around;
-            align-items: center;
-            display: flex;
-            box-shadow: 2px 4px 9px 3px rgba(0,0,0,0.5);
+    .demo-chat-window-box {
+        display: flex;
+        width: 500px;
+        position: absolute;
+        left: 0.5em;
+        bottom: 0.5em;
+
+        .demo-chat-window {
+            width: 50%;
+
+            .demo-chat-window-header {
+                height: 40px;
+                background-color: blueviolet;
+                color: white;
+            }
+
         }
-    // }
+    }
+
+    .demo-chat-list {
+        box-shadow: 2px 2px 7px 0px rgba(0,0,0,0.5);
+        position: absolute;
+        bottom: 0.5em;
+        right: 0.5em;
+        height: auto;
+        width: 250px;
+        bottom: 55px;
+    }
+
+    .chat-popup-button {
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        bottom: 0.5em;
+        right: 0.5em;
+        border-radius: 50%;
+        justify-content: space-around;
+        align-items: center;
+        display: flex;
+        box-shadow: 2px 4px 9px 3px rgba(0,0,0,0.5);
+    }
 }

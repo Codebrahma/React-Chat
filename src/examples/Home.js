@@ -22,10 +22,7 @@ import WindowIndex from './chat-window/index'
 // import ChatListItem1 from './exampleChat1/ChatListItem1'
 // import ChatListSearch1 from './exampleChat1/ChatListSearch1'
 
-import ChatListHeader from './exampleChat2/ChatListHeader';
-import ChatListItem from './exampleChat2/chatListItem';
 import DemoPage from './demoPage';
-// import ChatList from './exampleChat2/ChatList';
 
 class Home extends Component {
   constructor(props) {
