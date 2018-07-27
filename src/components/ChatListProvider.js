@@ -6,7 +6,6 @@ import {
 import ChatListHeader from './ChatListHeader'
 import ChatList from './ChatList'
 import ChatListSearch from './ChatListSearch'
-import classNames from 'classnames'
 
 const ChatListProvider = (props) => {
   return (

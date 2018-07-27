@@ -1,7 +1,7 @@
 export const mySelf = {
   id: 0,
   avatar: require('./images/user-6.jpeg'),
-  name: "MySelf",
+  name: "You",
   onlineStatus: "online",
   lastSeen: new Date(),
   previewMessage: "Lorem ipsum dolor sit amet.",
