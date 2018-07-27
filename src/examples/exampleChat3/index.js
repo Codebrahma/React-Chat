@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChatListProvider, ChatList, ChatListSearch } from '../../components';
+import { ChatListProvider, ChatList } from '../../components';
 import ExampleChatListHeader from './ExampleChatListHeader';
 import ExampleChatListItem from './ExampleChatListItem';
 
@@ -16,7 +16,7 @@ const ExampleChat = (props) => {
             >
 
                 <ExampleChatListHeader {...props} />
-                
+
                 <ChatList
                     customChatListItem={ExampleChatListItem}
                     chatListClass="chat-list-theme"

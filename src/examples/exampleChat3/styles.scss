@@ -18,20 +18,17 @@
                 color: white;
                 border-radius: 5px;
                 padding: 1.5% 5%;
-                background: rgba(230,81,0, 0.15);
+                background: rgba(230, 81, 0, 0.15);
                 transition: 0.1s linear;
-
                 &:focus {
                     padding: 3.6% 5%;
-                    background: rgba(230,81,0, 0.30);
+                    background: rgba(230, 81, 0, 0.30);
                 }
             }
         }
-        
     }
     .chat-list-theme {
-        background: white;
-        // padding: 0 5%;   
+        background: white; 
         overflow-y: scroll;
         max-height: 60vh;
         .chat-list-item-theme {
@@ -41,11 +38,9 @@
             justify-content: space-around;
             padding: 0% 2%;
             cursor: pointer;
-
             &:hover {
-                background-color:rgba(245,127,23, 0.2) ;
+                background-color: rgba(245, 127, 23, 0.2);
             }
-
             .user-list-avatar-theme {
                 border-radius: 50%;
             }

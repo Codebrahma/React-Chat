@@ -1,87 +1,88 @@
 .chat-window-container {
-  max-width: 350px !important;
-  .chat-window-header {
-    background: $chat-header;
-    padding: 5px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: $chat-head-text;
-    .chat-window-avatar {
-      border-radius: 50%;
-      max-height: 40px;
-      max-width: 40px;
-      margin-right: 20px;
+    max-width: 350px !important;
+    border-radius: 5px;
+    .animated {
+        animation-duration: 0.1s;
     }
-    .chat-user-name {
-      flex: 2;
-      text-transform: capitalize;
-    }
-  }
-  .chat-window-body {
-    height: 50vh;
-    padding: 5px 10px;
-    overflow-y: scroll;
-    .message {
-      margin: 4px;
-      word-wrap: break-word;
-      font-size: 14px;
-      max-width: 60%;
-      padding: 8px 10px;;
-      border-radius: 8px;
-      border: 1px solid $chat-border;
-      clear: both;
-    }
-    .sent {
-      // width: auto;
-      // justify-content: flex-end;
-      background: #b8dff0;
-      float: right;
-    }
-    .received {
-      // justify-content: flex-start;
-      background: $received-messagae;
-      float: left;
-    }
-    &::-webkit-scrollbar {
-      width: 8px;
-    }
-    &::-webkit-scrollbar-track {
-      background: $chat-head-text;
-    }
-    &::-webkit-scrollbar-thumb {
-      background: $scroll-bg;
-      border-radius: 5px;
-    }
-  }
-  .chat-window-send {
-    border-top: 1px solid $chat-border;
-    box-shadow: 0 -5px 10px -5px $input-box-shadow;
-    margin-top: 5px;
-    height: 30px;
-    padding: 5px 10px 5px 5px;
-    form{
-      margin: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: $head-font-size;
-      .chat-window-send-input {
-        flex: 2;
-        width: 77%;
-        margin-right: 15px;
-        border: 0;
-        outline: none;
-        padding: 2px;
-      }
-      button {
-        background: none;
-        border: 0;
-        color: $chat-header;
-        i {
-          font-size: 16px;
+    .chat-window-header {
+        background: $chat-header;
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $chat-head-text;
+        border-radius: 5px 5px 0 0;
+        .chat-window-avatar {
+            border-radius: 50%;
+            max-height: 40px;
+            max-width: 40px;
+            margin-right: 20px;
         }
-      }
+        .chat-user-name {
+            flex: 2;
+            text-transform: capitalize;
+        }
     }
-  }
+    .chat-window-body {
+        height: 50vh;
+        padding: 5px 10px;
+        overflow-y: scroll;
+        .message {
+            margin: 4px;
+            word-wrap: break-word;
+            font-size: 14px;
+            max-width: 60%;
+            padding: 8px 10px;
+            ;
+            border-radius: 8px;
+            border: 1px solid $chat-border;
+            clear: both;
+        }
+        .sent {
+            background: #b8dff0;
+            float: right;
+        }
+        .received {
+            background: $received-messagae;
+            float: left;
+        }
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+        &::-webkit-scrollbar-track {
+            background: $chat-head-text;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $scroll-bg;
+            border-radius: 5px;
+        }
+    }
+    .chat-window-send {
+        box-shadow: 0 -5px 16px -5px $input-box-shadow;
+        height: 35px;
+        padding: 2%;
+        form {
+            display: flex;
+            height: 100%;
+            padding: 0;
+            align-items: center;
+            justify-content: space-between;
+            font-size: $head-font-size;
+            .chat-window-send-input {
+                border: none;
+                outline: none;
+                padding: 2% 5%;
+                height: 70%;
+                width: 100%
+            }
+            button {
+                background: none;
+                border: 0;
+                color: $chat-header;
+                i {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
 }

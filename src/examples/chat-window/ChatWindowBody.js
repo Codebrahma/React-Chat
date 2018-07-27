@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class ChatWindowBody extends Component {
@@ -21,7 +21,7 @@ class ChatWindowBody extends Component {
       <div className={this.props.chatBodyClass} id={`window-${this.props.myData.id}`}>
         {
           this.props.messages.map((message,index) => (
-              <div key={index} id={`m-${this.props.myData.id}-${index+1}`} className={`${this.props.myData.id === message.userId ? "sent" : "received"} message`}>
+              <div key={index} id={`m-${this.props.myData.id}-${index+1}`} className={`${this.props.myData.id === message.userId ? "sent" : "received"} message animated zoomIn`}>
                 {message.message}
               </div>
             )

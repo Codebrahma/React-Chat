@@ -11,7 +11,6 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         text-anchor: middle;
         padding: 0.25%;
-        z-index: 10001;
         position: fixed;
         top: 0;
         left: 0;
@@ -21,6 +20,7 @@
             height: auto;
             padding: 0.5%;
             align-items: center;
+            font-size: 1.4em;
         }
     }
     .demo-page-intro {
@@ -51,10 +51,8 @@
         bottom: 0.5em;
         z-index: 1000;
         justify-content: space-between;
-
         .demo-chat-window {
-          width: 49%;
-          // margin: 0 10px;
+            width: 49%;
             .demo-chat-window-header {
                 height: 40px;
                 background-color: blueviolet;
@@ -63,16 +61,23 @@
         }
     }
     .demo-chat-list {
-        box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.5);
         position: fixed;
-        bottom: 0.5em;
         right: 0.5em;
+        margin-bottom: 0.2%;
+        border-radius: 5px;
         height: auto;
-        // width: 250px;
+        width: 300px;
         bottom: 55px;
         z-index: 1000;
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .demo-chat-provider {
+            border-radius: 5px;
+        }
     }
     .chat-popup-button {
+        z-index: 1000;
         width: 45px;
         height: 45px;
         position: fixed;

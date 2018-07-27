@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DemoChatButton from './DemoChatButton';
-import { ChatListProvider, ChatListHeader, ChatList } from '../../components';
+import { ChatListProvider } from '../../components';
 
 class DemoChatList extends Component {
 
@@ -22,7 +22,7 @@ class DemoChatList extends Component {
             <div>
                 {
                     this.state.open &&
-                    <div className="demo-chat-list">
+                    <div className="demo-chat-list animated slideInRight">
                         <ChatListProvider
                           userData={this.props.userData}
                           handleChatItemClick={(id) => this.props.updateChatWindow(id)}
@@ -30,7 +30,7 @@ class DemoChatList extends Component {
                         />
                     </div>
                 }
-                <DemoChatButton handleChatListProvider={this.handleChatProvider} />
+                <DemoChatButton iconClass={this.state.open ? "fa-times" : "fa-comment"} handleChatListProvider={this.handleChatProvider} />
             </div>
         );
     }
