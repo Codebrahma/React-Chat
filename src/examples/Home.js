@@ -15,6 +15,7 @@ import WindowIndex from './chat-window/index'
 import DemoPage from './demoPage';
 
 import ExampleChat2 from './exampleChat2/'
+import ExampleChat3 from './exampleChat3';
 
 class Home extends Component {
   constructor(props) {
@@ -33,7 +34,10 @@ class Home extends Component {
   render() {
     return (
       // <DemoPage/>
-      <ExampleChat2 userData={userData} />
+      <div>
+        <ExampleChat2 userData={userData} />
+        <ExampleChat3 userData={userData} />
+      </div>
     )
   }
 }
