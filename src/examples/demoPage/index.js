@@ -24,10 +24,10 @@ class DemoPage extends Component {
     }
 
     handleSearchChange = (e) => {
-      console.log(e.target.value)
-      this.setState({
-        searchedFor: e.target.value,
-      })
+        console.log(e.target.value)
+        this.setState({
+            searchedFor: e.target.value,
+        })
     }
 
     render() {
@@ -37,14 +37,14 @@ class DemoPage extends Component {
                 <DemoPageNavbar />
                 <div className="demo-page-intro">
                     <div className="demo-intro animated fadeInUp">
-                        <h2>Lorem ipsum dolor sit amet, dolore magna aliqua.</h2>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <h2>A reusable React Chat App module.</h2>
+                        <p>Click on the chat icon at the bottom right of the page and select any user to start a demo chat!</p>
                     </div>
                 </div>
-                <DemoChatListBox updateChatWindow={this.updateWindow} handleSearchChange={this.handleSearchChange} {...this.props}/>
+                <DemoChatListBox updateChatWindow={this.updateWindow} handleSearchChange={this.handleSearchChange} {...this.props} />
                 {
                     this.state.chatUserId !== '' &&
-                    <DemoChatWindowBox userId={this.state.chatUserId}  {...this.props}/>
+                    <DemoChatWindowBox userId={this.state.chatUserId}  {...this.props} />
                 }
             </div>
         )

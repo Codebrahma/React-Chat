@@ -22,6 +22,10 @@
             flex: 2;
             text-transform: capitalize;
         }
+
+        .fa-times {
+          cursor: pointer;
+        }
     }
     .chat-window-body {
         height: 50vh;
@@ -79,6 +83,7 @@
                 background: none;
                 border: 0;
                 color: $chat-header;
+                cursor: pointer;
                 i {
                     font-size: 16px;
                 }
