@@ -17,10 +17,9 @@ class DemoChatWindowBox extends Component {
 
   componentWillReceiveProps(nextProps) {
     this.state.currentUserId !== nextProps.userId
-      ? this.setState((prevState) => ({
+      && this.setState((prevState) => ({
           messages: []
         }))
-      : null
   }
 
   handleMessages = ({userId, message}) => {

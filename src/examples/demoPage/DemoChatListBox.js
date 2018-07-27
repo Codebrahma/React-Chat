@@ -26,6 +26,7 @@ class DemoChatList extends Component {
                         <ChatListProvider
                           userData={this.props.userData}
                           handleChatItemClick={(id) => this.props.updateChatWindow(id)}
+                          handleSearchChange={this.props.handleSearchChange}
                         />
                     </div>
                 }

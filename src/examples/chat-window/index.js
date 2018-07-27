@@ -15,12 +15,6 @@ class WindowIndex extends Component {
     }
   }
 
-  // componentWillReceiveProps() {
-  //   this.setState({
-  //     messages: []
-  //   })
-  // }
-
   handleInputMessage = (e) => {
     this.setState({
       inputMessage: e.target.value,

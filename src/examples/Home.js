@@ -17,25 +17,8 @@ import DemoPage from './demoPage';
 import ExampleChat2 from './exampleChat2/'
 import ExampleChat3 from './exampleChat3';
 
-class Home extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      searchedFor: '',
-    }
-  }
-
-  handleSearchChange = (e) => {
-    console.log(e.target.value)
-    this.setState({
-      searchedFor: e.target.value,
-    })
-  }
-  render() {
-    return (
-      <DemoPage userData={userData} myData={mySelf}/>
-    )
-  }
-}
+const Home = () => (
+  <DemoPage userData={userData} myData={mySelf}/>
+)
 
 export default Home
