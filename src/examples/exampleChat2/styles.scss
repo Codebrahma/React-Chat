@@ -1,10 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:500,700');
 .chat-provider-theme {
     width: 340px;
     border: 1px solid $chat-border;
-    // background: yellow;
-
     .chat-header-theme {
         height: 40px;
-        background: blueviolet;
+        background: $chat-window-head-theme2;
+        color: white;
+        display: flex;
+        align-items: center;
+        font-family: 'Raleway', sans-serif;
+        .chat-header-menu-icon {
+            padding: 9%;
+        }
+    }
+    .chat-search-theme {
+        height: 1.8em;
+        padding: 2%;
+        padding-bottom: 4%;
+        display: flex;
+        justify-content: center;
+        background: $chat-window-head-theme2;
+        border-bottom: 0.02em solid white;
+        input::placeholder {
+            color: white;
+            font-family: 'Raleway', sans-serif;
+            padding: 2%;
+        }
+        input:-moz-placeholder {
+            color: white;
+            font-family: 'Raleway', sans-serif;
+            padding: 2%;
+        }
+        input::-webkit-input-placeholder {
+            color: white;
+            font-family: 'Raleway', sans-serif;
+            padding: 2%;
+        }
+        input:-ms-input-placeholder {
+            color: white;
+            font-family: 'Raleway', sans-serif;
+            padding: 2%;
+        }
+        .chat-search-theme-input {
+            max-width: 78%;
+            padding: 0.5% 4%;
+            border: none;
+            background: $chat-window-head-theme2;
+            outline: none;
+            color: white;
+            &:focus {
+                border-bottom: 1px solid white;
+            }
+        }
+    }
+    .chat-list-theme {
+        background: white;
+        overflow-y: scroll;
+        max-height: 60vh;
+    }
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    .chat-list-item-theme {
+        border-bottom: 1.2px solid #aa9b9b9a;
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+        padding: 0% 2%;
+        cursor: pointer;
+        &:hover {
+            background: rgba(26,35,126,0.2);
+        }
+        .user-list-avatar-theme {
+            border-radius: 50%;
+        }
+        .user-list-item-theme {
+            max-width: 100%;
+            flex: 2;
+            padding: 0 5%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            .user-list-name-theme {
+                font-family: 'Raleway', sans-serif;
+            }
+            .user-list-message-theme {
+                display: block;
+                font-size: 0.75em;
+                color: grey;
+                font-family: 'Raleway', sans-serif;
+            }
+        }
     }
 }

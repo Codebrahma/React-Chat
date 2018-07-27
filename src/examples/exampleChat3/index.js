@@ -4,14 +4,19 @@ import ExampleChatListHeader from './ExampleChatListHeader';
 import ExampleChatListItem from './ExampleChatListItem';
 
 const ExampleChat = (props) => {
+
+    function handleItemClick(id) {
+        console.log(id);
+    }
     return (
         <div>
             <ChatListProvider
                 userData={props.userData}
-                chatProviderClass="chat-provider-theme"
+                chatProviderClass="example3-chat-provider-theme" handleChatItemClick={handleItemClick}
             >
+
                 <ExampleChatListHeader {...props} />
-                <ChatListSearch chatSearchClass="chat-search-theme" />
+                
                 <ChatList
                     customChatListItem={ExampleChatListItem}
                     chatListClass="chat-list-theme"

@@ -4,14 +4,14 @@ import Icon from '../Icon';
 
 const DemoChatButton = (props) => {
 
-    function handleClick () {
+    function handleClick() {
         props.handleChatListProvider();
     }
 
     return (
-    <div className="chat-popup-button" onClick={handleClick}>
-        <Icon iconClass="fa-comment"/>
-    </div>
+        <div className="chat-popup-button" onClick={handleClick}>
+            <Icon iconClass="fa-comment" />
+        </div>
     )
 }
 

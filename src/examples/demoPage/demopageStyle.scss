@@ -2,7 +2,6 @@
     width: 100%;
     overflow-x: none;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
     .demo-page-navbar {
         height: 5.6%;
         min-width: 100%;
@@ -16,7 +15,6 @@
         position: fixed;
         top: 0;
         left: 0;
-
         .demo-page-navbar-brand {
             display: flex;
             width: fit-content;
@@ -25,7 +23,6 @@
             align-items: center;
         }
     }
-
     .demo-page-intro {
         height: 80vh;
         width: 100%;
@@ -35,12 +32,10 @@
         display: flex;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
-
     .demo-intro {
         padding: 0 15%;
         animation-duration: 2s;
     }
-
     .demo-page-intro-container {
         height: 50vh;
         max-width: 100%;
@@ -48,7 +43,6 @@
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         text-align: center;
     }
-
     .demo-chat-window-box {
         display: flex;
         width: 50vw;
@@ -67,12 +61,10 @@
                 background-color: blueviolet;
                 color: white;
             }
-
         }
     }
-
     .demo-chat-list {
-        box-shadow: 2px 2px 7px 0px rgba(0,0,0,0.5);
+        box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.5);
         position: fixed;
         bottom: 0.5em;
         right: 0.5em;
@@ -81,7 +73,6 @@
         bottom: 55px;
         z-index: 1000;
     }
-
     .chat-popup-button {
         width: 45px;
         height: 45px;
@@ -92,7 +83,7 @@
         justify-content: space-around;
         align-items: center;
         display: flex;
-        background: rgb(255,255,255);
-        box-shadow: 2px 4px 9px 3px rgba(0,0,0,0.5);
+        background: rgb(255, 255, 255);
+        box-shadow: 2px 4px 9px 3px rgba(0, 0, 0, 0.5);
     }
 }
