@@ -9,7 +9,7 @@ const ExampleChatListItem = (props) => {
 
     return (
         <div id={props.id} className="chat-list-item-theme" onClick={() => props.handleChatItemClick(props.id)}>
-                <img src={props.avatar} className="user-list-avatar-theme" alt={props.name.slice(0, 1).toUpperCase()} />
+            <img src={props.avatar} className="user-list-avatar-theme" alt={props.name.slice(0, 1).toUpperCase()} />
             <div className="user-list-item-theme">
                 <p className="user-list-name-theme">{props.name}</p>
                 <p className="user-list-message-theme">{props.previewMessage}</p>

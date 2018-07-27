@@ -10,7 +10,7 @@ const DemoChatButton = (props) => {
 
     return (
         <div className="chat-popup-button" onClick={handleClick}>
-            <Icon iconClass="fa-comment" />
+            <Icon iconClass={props.iconClass} />
         </div>
     )
 }

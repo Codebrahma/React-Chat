@@ -16,7 +16,7 @@ const MyChatWindow = (props) => {
     >
       <ChatWindowHeader />
       <ChatWindowBody />
-      <ChatWindowSend  />
+      <ChatWindowSend />
     </ChatListProvider>
   )
 }

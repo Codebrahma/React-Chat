@@ -3,11 +3,14 @@ import PropTypes from 'prop-types'
 import Icon from '../Icon'
 
 const ChatWindowHeader = (props) => {
+
   return (
     <div className={props.chatHeaderClass}>
-      <img src={props.myData.avatar} alt={props.myData.name.slice(0,1).toUpperCase()} className="chat-window-avatar"/>
+      <img src={props.myData.avatar} alt={props.myData.name.slice(0, 1).toUpperCase()} className="chat-window-avatar" />
       <span className="chat-user-name">{props.myData.name}</span>
-      <Icon iconClass="fa-times" />
+      <div onClick={props.handleCloseClick}>
+        <Icon iconClass="fa-times" />
+      </div>
     </div>
   )
 }

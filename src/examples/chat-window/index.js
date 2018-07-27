@@ -4,22 +4,16 @@ import ChatWindowHeader from './ChatWindowHeader'
 import ChatWindowBody from './ChatWindowBody'
 import ChatWindowSend from './ChatWindowSend'
 import {
-    ChatListProvider,
-  } from '../../components/index'
+  ChatListProvider,
+} from '../../components/index'
 
 class WindowIndex extends Component {
   constructor(props) {
     super(props)
-    this.state={
-      inputMessage:'',
+    this.state = {
+      inputMessage: '',
     }
   }
-
-  // componentWillReceiveProps() {
-  //   this.setState({
-  //     messages: []
-  //   })
-  // }
 
   handleInputMessage = (e) => {
     this.setState({
@@ -29,10 +23,10 @@ class WindowIndex extends Component {
 
   onSend = (e) => {
     this.state.inputMessage.trim() !== ''
-    ? this.props.handleMessages({message:this.state.inputMessage, userId: this.props.myData.id})
-    : null
-    this.setState((prevState) => ({
-      inputMessage:'',
+      ? this.props.handleMessages({ message: this.state.inputMessage, userId: this.props.myData.id })
+      : null
+    this.setState(() => ({
+      inputMessage: '',
     }))
     e.preventDefault()
   }
@@ -42,22 +36,22 @@ class WindowIndex extends Component {
       <ChatListProvider
         myData={this.props.myData}
         userData={this.props.userData}
-        chatProviderClass="chat-window-container"
+        chatProviderClass="chat-window-container animated fadeInUp"
         handleInputMessage={this.handleInputMessage}
         onSend={this.onSend}
         inputValue={this.state.inputMessage}
         messages={this.props.messages}
       >
-        <ChatWindowHeader />
+        <ChatWindowHeader {...this.props} />
         <ChatWindowBody />
-        <ChatWindowSend  />
+        <ChatWindowSend />
       </ChatListProvider>
     )
   }
 }
 
 WindowIndex.propTypes = {
-  userData: PropTypes.oneOfType([PropTypes.array,PropTypes.object]).isRequired,
+  userData: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
 }
 
 export default WindowIndex
