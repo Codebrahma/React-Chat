@@ -10,35 +10,44 @@ import {
 class WindowIndex extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      inputMessage: '',
+    this.state={
+      inputMessage:'',
     }
   }
+
+  // componentWillReceiveProps() {
+  //   this.setState({
+  //     messages: []
+  //   })
+  // }
 
   handleInputMessage = (e) => {
     this.setState({
       inputMessage: e.target.value,
     })
-    // console.log(this.state.inputMessage)
   }
 
   onSend = (e) => {
-    console.log(this.state.inputMessage)
-    this.setState({
-      inputMessage:''
-    })
+    this.state.inputMessage.trim() !== ''
+    ? this.props.handleMessages({message:this.state.inputMessage, userId: this.props.myData.id})
+    : null
+    this.setState((prevState) => ({
+      inputMessage:'',
+    }))
     e.preventDefault()
   }
 
   render() {
     return (
       <ChatListProvider
+        myData={this.props.myData}
         userData={this.props.userData}
         chatProviderClass="chat-window-container"
         handleInputMessage={this.handleInputMessage}
         onSend={this.onSend}
         inputValue={this.state.inputMessage}
-        >
+        messages={this.props.messages}
+      >
         <ChatWindowHeader />
         <ChatWindowBody />
         <ChatWindowSend  />
@@ -48,7 +57,7 @@ class WindowIndex extends Component {
 }
 
 WindowIndex.propTypes = {
-  userData: PropTypes.array.isRequired,
+  userData: PropTypes.oneOfType([PropTypes.array,PropTypes.object]).isRequired,
 }
 
 export default WindowIndex

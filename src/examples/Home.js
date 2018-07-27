@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { userData } from '../data'
+import { userData, mySelf } from '../data'
 import {
   ChatListProvider,
   ChatListHeader,
@@ -33,11 +33,7 @@ class Home extends Component {
   }
   render() {
     return (
-      // <DemoPage/>
-      <div>
-        <ExampleChat2 userData={userData} />
-        <ExampleChat3 userData={userData} />
-      </div>
+      <DemoPage userData={userData} myData={mySelf}/>
     )
   }
 }

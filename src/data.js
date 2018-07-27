@@ -1,3 +1,19 @@
+export const mySelf = {
+  id: 0,
+  avatar: require('./images/user-6.jpeg'),
+  name: "MySelf",
+  onlineStatus: "online",
+  lastSeen: new Date(),
+  previewMessage: "Lorem ipsum dolor sit amet.",
+  messages: [
+    {
+      messageId: 1,
+      text: 'self',
+      receivedFrom: {},
+    },
+  ]
+}
+
 export const userData = [{
     id: 1,
     avatar: require("./images/user-1.jpeg"),

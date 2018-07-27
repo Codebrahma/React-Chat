@@ -33,10 +33,10 @@ class DemoPage extends Component {
                         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                 </div>
-                <DemoChatListBox updateChatWindow={this.updateWindow} />
+                <DemoChatListBox updateChatWindow={this.updateWindow} {...this.props}/>
                 {
                     this.state.chatUserId !== '' &&
-                    <DemoChatWindowBox userId={this.state.chatUserId} />
+                    <DemoChatWindowBox userId={this.state.chatUserId}  {...this.props}/>
                 }
             </div>
         )
