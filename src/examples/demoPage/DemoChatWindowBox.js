@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 import { ChatListProvider, ChatList, ChatListSearch } from '../../components';
 import DemoChatWindowHeader from './DemoChatListHeader';
 import WindowIndex from '../chat-window'
-import MyChatWindow from '../chat-window/MyChatWindow'
 import ExampleChat1 from '../exampleChat1'
 
 

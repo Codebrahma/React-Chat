@@ -4,7 +4,7 @@ import Icon from '../Icon';
 
 const DemoChatButton = (props) => {
 
-    function handleClick() {
+    const handleClick = () => {
         props.handleChatListProvider();
     }
 
