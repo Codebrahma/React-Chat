@@ -28,7 +28,9 @@ class WindowIndex extends Component {
   }
 
   onSend = (e) => {
-    this.props.handleMessages({message:this.state.inputMessage, userId: this.props.myData.id})
+    this.state.inputMessage.trim() !== ''
+    ? this.props.handleMessages({message:this.state.inputMessage, userId: this.props.myData.id})
+    : null
     this.setState((prevState) => ({
       inputMessage:'',
     }))
