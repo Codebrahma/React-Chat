@@ -33,7 +33,7 @@ ChatListProvider.propTypes = {
   customHeader: PropTypes.func,
   customList: PropTypes.func,
   customSearch: PropTypes.func,
-  userData: PropTypes.array.isRequired,
+  userData: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
   handleSearchChange: PropTypes.func,
   chatProviderClass: PropTypes.string,
 }

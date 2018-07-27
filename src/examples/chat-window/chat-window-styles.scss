@@ -22,6 +22,27 @@
     height: 50vh;
     padding: 5px 10px;
     overflow-y: scroll;
+    .message {
+      margin: 4px;
+      word-wrap: break-word;
+      font-size: 14px;
+      max-width: 60%;
+      padding: 8px 10px;;
+      border-radius: 8px;
+      border: 1px solid $chat-border;
+      clear: both;
+    }
+    .sent {
+      // width: auto;
+      // justify-content: flex-end;
+      background: #b8dff0;
+      float: right;
+    }
+    .received {
+      // justify-content: flex-start;
+      background: $received-messagae;
+      float: left;
+    }
     &::-webkit-scrollbar {
       width: 8px;
     }

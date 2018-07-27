@@ -37,7 +37,7 @@
     }
 
     .demo-intro {
-        padding: 0 15%;  
+        padding: 0 15%;
         animation-duration: 2s;
     }
 
@@ -51,14 +51,16 @@
 
     .demo-chat-window-box {
         display: flex;
-        width: 500px;
+        width: 50vw;
         position: fixed;
         left: 0.5em;
         bottom: 0.5em;
         z-index: 1000;
+        justify-content: space-between;
 
         .demo-chat-window {
-            width: 50%;
+          width: 49%;
+          // margin: 0 10px;
 
             .demo-chat-window-header {
                 height: 40px;
@@ -75,7 +77,7 @@
         bottom: 0.5em;
         right: 0.5em;
         height: auto;
-        width: 250px;
+        // width: 250px;
         bottom: 55px;
         z-index: 1000;
     }

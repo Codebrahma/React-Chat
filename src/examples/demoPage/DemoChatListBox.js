@@ -23,8 +23,10 @@ class DemoChatList extends Component {
                 {
                     this.state.open &&
                     <div className="demo-chat-list">
-                        <ChatListProvider userData={this.props.userData} handleChatItemClick={(id) => this.props.updateChatWindow(id)}>
-                        </ChatListProvider>
+                        <ChatListProvider
+                          userData={this.props.userData}
+                          handleChatItemClick={(id) => this.props.updateChatWindow(id)}
+                        />
                     </div>
                 }
                 <DemoChatButton handleChatListProvider={this.handleChatProvider} />

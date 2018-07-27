@@ -5,8 +5,8 @@ import Icon from '../Icon'
 const ChatWindowHeader = (props) => {
   return (
     <div className={props.chatHeaderClass}>
-      <img src={props.userData.avatar} alt={props.userData.name.slice(0,1).toUpperCase()} className="chat-window-avatar"/>
-      <span className="chat-user-name">{props.userData.name}</span>
+      <img src={props.myData.avatar} alt={props.myData.name.slice(0,1).toUpperCase()} className="chat-window-avatar"/>
+      <span className="chat-user-name">{props.myData.name}</span>
       <Icon iconClass="fa-times" />
     </div>
   )

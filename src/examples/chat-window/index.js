@@ -10,47 +10,41 @@ import {
 class WindowIndex extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      inputMessage: '',
+    this.state={
+      inputMessage:'',
     }
   }
-  componentDidMount() {
-    console.log(this.props.userId,'on mount')
-    this.setState({
-      currentUserId: this.props.userId,
-    })
-  }
 
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps.userId,'on receive updated')
-    this.setState({
-      currentUserId: nextProps.userId,
-    })
-  }
+  // componentWillReceiveProps() {
+  //   this.setState({
+  //     messages: []
+  //   })
+  // }
 
   handleInputMessage = (e) => {
     this.setState({
       inputMessage: e.target.value,
     })
-    // console.log(this.state.inputMessage)
   }
 
   onSend = (e) => {
-    console.log(this.state.inputMessage)
-    this.setState({
-      inputMessage:''
-    })
+    this.props.handleMessages({message:this.state.inputMessage, userId: this.props.myData.id})
+    this.setState((prevState) => ({
+      inputMessage:'',
+    }))
     e.preventDefault()
   }
 
   render() {
     return (
       <ChatListProvider
-        userData={this.props.userData.find((user) => user.id === this.props.userId)}
+        myData={this.props.myData}
+        userData={this.props.userData}
         chatProviderClass="chat-window-container"
         handleInputMessage={this.handleInputMessage}
         onSend={this.onSend}
         inputValue={this.state.inputMessage}
+        messages={this.props.messages}
       >
         <ChatWindowHeader />
         <ChatWindowBody />
@@ -61,7 +55,7 @@ class WindowIndex extends Component {
 }
 
 WindowIndex.propTypes = {
-  userData: PropTypes.array.isRequired,
+  userData: PropTypes.oneOfType([PropTypes.array,PropTypes.object]).isRequired,
 }
 
 export default WindowIndex
