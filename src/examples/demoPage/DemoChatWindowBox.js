@@ -12,7 +12,7 @@ const DemoChatWindowBox = (props) => {
             </div>
             <div className="demo-chat-window">
                 <ChatListProvider userData={userData}>
-                    <DemoChatWindowHeader userId={props.userId}/>
+                    <DemoChatWindowHeader userId={props.userId} />
                     <ChatList />
                     <ChatListSearch />
                 </ChatListProvider>

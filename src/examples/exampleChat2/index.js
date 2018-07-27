@@ -1,17 +1,21 @@
 import React from 'react';
-import { ChatListProvider, ChatListHeader } from '../../components';
-import { userData } from '../../data';
+import { ChatListProvider, ChatList, ChatListSearch } from '../../components';
 import ExampleChatListHeader from './ExampleChatListHeader';
+import ExampleChatListItem from './ExampleChatListItem';
 
-const ExampleChat = () => {
+const ExampleChat = (props) => {
     return (
         <div>
-            <ChatListProvider 
-            userData={userData}
-            chatProviderClass="chat-provider-theme"
+            <ChatListProvider
+                userData={props.userData}
+                chatProviderClass="chat-provider-theme"
             >
-
-            <ExampleChatListHeader />
+                <ExampleChatListHeader {...props} />
+                <ChatListSearch chatSearchClass="chat-search-theme" />
+                <ChatList
+                    customChatListItem={ExampleChatListItem}
+                    chatListClass="chat-list-theme"
+                />
 
             </ChatListProvider>
         </div>

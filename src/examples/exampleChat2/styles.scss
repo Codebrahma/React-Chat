@@ -1,10 +1,84 @@
 .chat-provider-theme {
     width: 340px;
     border: 1px solid $chat-border;
-    // background: yellow;
-
     .chat-header-theme {
         height: 40px;
-        background: blueviolet;
+        background: $chat-window-head-theme2;
+        color: white;
+        display: flex;
+        align-items: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        .chat-header-menu-icon {
+            padding: 9%;
+        }
+    }
+    .chat-search-theme {
+        height: 1.8em;
+        padding: 2%;
+        display: flex;
+        justify-content: center;
+        background: $chat-window-head-theme2;
+        input::placeholder {
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 2%;
+            border-bottom: 0.02em solid white;
+        }
+        input:-moz-placeholder {
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        input::-webkit-input-placeholder {
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        input:-ms-input-placeholder {
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .chat-search-theme-input {
+            width: 78%;
+            border: none;
+            background: $chat-window-head-theme2;
+            outline: none;
+            color: white;
+        }
+    }
+    .chat-list-theme {
+        background: white;
+        padding: 0 5%;
+        overflow-y: scroll;
+        max-height: 60vh;
+    }
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    .chat-list-item-theme {
+        border-bottom: 2px solid #aa9b9b9a; // display: flex;
+        align-items: center;
+        display: flex;
+        max-width: 250px;
+        justify-content: space-around;
+        padding: 2%;
+        cursor: pointer;
+        .user-list-avatar-theme {
+            border-radius: 50%;
+        }
+        .user-list-item-theme {
+            max-width: 100%;
+            flex: 2;
+            padding: 0 5%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            .user-list-name-theme {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            .user-list-message-theme {
+                display: block;
+                font-size: 0.75em;
+                color: grey;
+            }
+        }
     }
 }
