@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.demo-home {
+    width: 100%;
+    overflow-x: none;
+    font-family: 'Roboto', sans-serif;
+    .demo-page-navbar {
+        height: 8.2%;
+        min-width: 100%;
+        display: inline-flex;
+        background: #35baf6;
+        color: aliceblue;
+        font-family: 'Roboto', sans-serif;
+        text-anchor: middle;
+        padding: 0.25%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        .demo-page-navbar-brand {
+            display: flex;
+            width: fit-content;
+            height: auto;
+            padding: 0.5%;
+            align-items: center;
+            font-size: 1.4em;
+        }
+    }
+    .demo-page-intro {
+        height: 80vh;
+        width: 100%;
+        text-align: center;
+        justify-content: space-around;
+        align-items: center;
+        display: flex;
+        font-family: 'Roboto', sans-serif;
+    }
+    .demo-intro {
+        padding: 0 15%;
+        animation-duration: 2s;
+    }
+    .demo-page-intro-container {
+        height: 50vh;
+        max-width: 100%;
+        padding: 5%;
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+    }
+    .demo-chat-window-box {
+        display: flex;
+        width: 50vw;
+        position: fixed;
+        left: 0.5em;
+        bottom: 0.5em;
+        z-index: 1000;
+        justify-content: space-between;
+        .demo-chat-window {
+            width: 49%;
+            .demo-chat-window-header {
+                height: 40px;
+                background-color: blueviolet;
+                color: white;
+            }
+        }
+    }
+    .demo-chat-list {
+        position: fixed;
+        right: 0.5em;
+        margin-bottom: 0.2%;
+        border-radius: 5px;
+        height: auto;
+        width: 300px;
+        bottom: 55px;
+        z-index: 1000;
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .demo-chat-provider {
+            border-radius: 5px;
+        }
+    }
+    .chat-popup-button {
+        z-index: 1000;
+        width: 45px;
+        height: 45px;
+        position: fixed;
+        bottom: 0.5em;
+        right: 0.5em;
+        border-radius: 50%;
+        cursor: pointer;
+        justify-content: space-around;
+        align-items: center;
+        display: flex;
+        background: rgb(255, 255, 255);
+        box-shadow: 2px 4px 9px 3px rgba(0, 0, 0, 0.5);
+    }
+}
