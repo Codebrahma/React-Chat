@@ -14,7 +14,7 @@ import { ChatListProvider } from './components/'
 		
 const App = () => {
 	return (
-	    <ChatListProvider userData={yourUserData}/>
+	  <ChatListProvider userData={yourUserData}/>
 	)
 }
     
