@@ -31,10 +31,10 @@ import { ChatListProvider } from './components/'
 		
 const App = () => {
 	return (
-	<ChatListProvider 
-		userData={yourUserData} 
-		chatProviderClass="custom-chat-provider-class"
-	  />
+		<ChatListProvider 
+			userData={yourUserData} 
+			chatProviderClass="custom-chat-provider-class"
+		/>
   )
 }
 
@@ -48,10 +48,10 @@ Similarily, you can pass your own styles to other default components.
 ```javascript
 import React from 'react';
 import { ChatListProvider, 
-         ChatList, 
-         ChatListHeader, 
-         ChatListSearch 
-    } from './components';
+	ChatList, 
+	ChatListHeader, 
+	ChatListSearch 
+} from './components';
     
 const App = () => {
   return (
@@ -59,15 +59,15 @@ const App = () => {
       userData = {yourUserData}
       chatProviderClass = "your-custom-chat-provider-class" 
     >
-        <ChatListHeader 
-          chatHeaderClass = "your-custom-chat-header-class"
-        />
-        <ChatList 
-          chatListClass = "your-custom-chat-list-class"
-        />
-        <ChatListSearch 
-          chatSearchClass = "your-custom-chat-search-class"
-        />
+			<ChatListHeader 
+				chatHeaderClass = "your-custom-chat-header-class"
+			/>
+			<ChatList 
+				chatListClass = "your-custom-chat-list-class"
+			/>
+			<ChatListSearch 
+				chatSearchClass = "your-custom-chat-search-class"
+			/>
     </ChatListProvider>
   )
 }
@@ -94,7 +94,7 @@ const App = () => {
 			customsearch = {
 			  //your custom Seacrh bar
 			  }
-		  />
+		 />
 	)
 }
     
