@@ -13,9 +13,9 @@ import React from 'react';
 import { ChatListProvider } from './components/'
 		
 const App = () => {
-	return (
-	  <ChatListProvider userData={yourUserData}/>
-	)
+  return (
+    <ChatListProvider userData={yourUserData}/>
+  )
 }
     
 export default App; 
@@ -30,11 +30,11 @@ import React from 'react';
 import { ChatListProvider } from './components/'
 		
 const App = () => {
-	return (
-		<ChatListProvider 
-			userData={yourUserData} 
-			chatProviderClass="custom-chat-provider-class"
-		/>
+  return (
+    <ChatListProvider 
+      userData={yourUserData} 
+      chatProviderClass="custom-chat-provider-class"
+    />
   )
 }
 
@@ -48,9 +48,9 @@ Similarily, you can pass your own styles to other default components.
 ```javascript
 import React from 'react';
 import { ChatListProvider, 
-	ChatList, 
-	ChatListHeader, 
-	ChatListSearch 
+  ChatList,  
+  ChatListHeader, 
+  ChatListSearch 
 } from './components';
     
 const App = () => {
@@ -59,15 +59,15 @@ const App = () => {
       userData = {yourUserData}
       chatProviderClass = "your-custom-chat-provider-class" 
     >
-			<ChatListHeader 
-				chatHeaderClass = "your-custom-chat-header-class"
-			/>
-			<ChatList 
-				chatListClass = "your-custom-chat-list-class"
-			/>
-			<ChatListSearch 
-				chatSearchClass = "your-custom-chat-search-class"
-			/>
+      <ChatListHeader 
+	chatHeaderClass = "your-custom-chat-header-class"
+      />
+      <ChatList 
+	chatListClass = "your-custom-chat-list-class"
+      />
+      <ChatListSearch 
+	chatSearchClass = "your-custom-chat-search-class"
+      />
     </ChatListProvider>
   )
 }
@@ -82,20 +82,14 @@ import React from 'react';
 import { ChatListProvider } from './components/'
 		
 const App = () => {
-	return (
-		<ChatListProvider 
-			userData = {yourUserData} 
-			customHeader = {
-			  //your custom Header
-			  }
-			customList = {
-			  //your custom List
-			  }
-			customsearch = {
-			  //your custom Seacrh bar
-			  }
-		 />
-	)
+  return (
+    <ChatListProvider 
+      userData = {yourUserData} 
+      customHeader = {//your custom Header}
+      customList = {//your custom List}
+      customsearch = {//your custom Seacrh bar}
+    />
+  )
 }
     
 export default App; 
