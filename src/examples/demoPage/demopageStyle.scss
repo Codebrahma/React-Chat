@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 .demo-home {
+  
     width: 100%;
     overflow-x: none;
     font-family: 'Roboto', sans-serif;
@@ -72,7 +73,12 @@
         bottom: 55px;
         z-index: 1000;
         ::-webkit-scrollbar {
-            display: none;
+            visibility: hidden;
+        }
+        &:hover {
+          ::-webkit-scrollbar {
+            visibility: visible;
+          }
         }
         .demo-chat-provider {
             border-radius: 5px;
