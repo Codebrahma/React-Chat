@@ -24,13 +24,13 @@ class DemoPage extends Component {
     }
 
     handleSearchChange = (e) => {
-        console.log(e.target.value)
         this.setState({
             searchedFor: e.target.value,
         })
     }
 
     render() {
+        let filteredUserData = this.props.userData.filter((user) => user.name.toLowerCase().includes(this.state.searchedFor.toLowerCase()))
         return (
             // Main container for demo page.
             <div className="demo-home">
@@ -41,7 +41,7 @@ class DemoPage extends Component {
                         <p>Click on the chat icon at the bottom right of the page and select any user to start a demo chat!</p>
                     </div>
                 </div>
-                <DemoChatListBox updateChatWindow={this.updateWindow} handleSearchChange={this.handleSearchChange} {...this.props} />
+                <DemoChatListBox updateChatWindow={this.updateWindow} handleSearchChange={this.handleSearchChange} userData={filteredUserData}  />
                 {
                     this.state.chatUserId !== '' &&
                     <DemoChatWindowBox userId={this.state.chatUserId}  {...this.props} />
