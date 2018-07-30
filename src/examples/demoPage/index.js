@@ -43,7 +43,7 @@ class DemoPage extends Component {
                 </div>
                 <DemoChatListBox updateChatWindow={this.updateWindow} handleSearchChange={this.handleSearchChange} userData={filteredUserData}  />
                 {
-                    this.state.chatUserId !== '' &&
+                    this.state.chatUserId  &&
                     <DemoChatWindowBox userId={this.state.chatUserId}  {...this.props} />
                 }
             </div>

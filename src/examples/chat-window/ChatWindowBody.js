@@ -5,14 +5,14 @@ class ChatWindowBody extends Component {
   // constructor(props) {
   //   super(props)
   // }
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(nextProps) {
     const lastMessageIndex = nextProps.messages.length;
        const messageContainer = document.getElementById(`window-${this.props.myData.id}`)
        const lastMessageElement=document.getElementById(`m-${this.props.myData.id}-${lastMessageIndex}`)
-       let lastMessageTop;
+       
        if(lastMessageElement!==null) {
-           let lastMessageTop = lastMessageElement.offsetTop
-            messageContainer.scrollTop = lastMessageTop-40;
+         let lastMessageTop = lastMessageElement.offsetTop;
+         messageContainer.scrollTop = lastMessageTop-40;
        }
   }
 
