@@ -36,7 +36,6 @@ class WindowIndex extends Component {
       <ChatListProvider
         myData={this.props.myData}
         userData={this.props.userData}
-        chatProviderClass="chat-window-container animated fadeInUp"
         handleInputMessage={this.handleInputMessage}
         onSend={this.onSend}
         inputValue={this.state.inputMessage}
