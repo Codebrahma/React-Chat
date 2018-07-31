@@ -4,6 +4,7 @@ import DemoPageNavbar from './DemoPageNavbar';
 import DemoChatListBox from './DemoChatListBox';
 import DemoChatWindowBox from './DemoChatWindowBox';
 import './resources/animate.css';
+import ExampleChat from '../exampleChat2';
 
 
 class DemoPage extends Component {
@@ -41,7 +42,7 @@ class DemoPage extends Component {
                         <p>Click on the chat icon at the bottom right of the page and select any user to start a demo chat!</p>
                     </div>
                 </div>
-                <DemoChatListBox updateChatWindow={this.updateWindow} handleSearchChange={this.handleSearchChange} userData={filteredUserData}  />
+                <ExampleChat updateChatWindow={this.updateWindow} handleSearchChange={this.handleSearchChange} userData={filteredUserData}  />
                 {
                     this.state.chatUserId  &&
                     <DemoChatWindowBox userId={this.state.chatUserId}  {...this.props} />

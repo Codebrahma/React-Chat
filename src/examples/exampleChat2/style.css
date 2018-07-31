@@ -1,0 +1,12 @@
+.chatHeader {
+    height: 40px;
+    background: rgb(26,35,126);
+    color: white;
+    display: flex;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+.icon {
+    padding: 9%;
+}

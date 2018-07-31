@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:500,700');
+@import '../../root/colors.scss';
+@import '../../root/font.scss';
+
+
 .chat-provider-theme {
     width: 340px;
     border: 1px solid $chat-border;

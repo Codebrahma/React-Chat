@@ -2,6 +2,7 @@ import React from 'react';
 import { ChatListProvider, ChatList, ChatListSearch } from '../../components';
 import ExampleChatListHeader from './ExampleChatListHeader';
 import ExampleChatListItem from './ExampleChatListItem';
+import theme from './style.css';
 
 const ExampleChat = (props) => {
     return (
@@ -10,7 +11,7 @@ const ExampleChat = (props) => {
                 userData={props.userData}
                 chatProviderClass="chat-provider-theme"
             >
-                <ExampleChatListHeader {...props} />
+                <ExampleChatListHeader theme={theme} {...props} />
                 <ChatListSearch chatSearchClass="chat-search-theme" />
                 <ChatList
                     customChatListItem={ExampleChatListItem}
