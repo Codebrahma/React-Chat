@@ -6,6 +6,7 @@
     color: white;
     display: flex;
     align-items: center;
+    border-radius: 5px 5px 0 0;
     justify-content: space-around;
     align-content: flex-start;
     padding: 0.5% 2.5%;
@@ -17,8 +18,10 @@
 }
 
 :local(.provider) {
+    width: 300px;
     background: $chat-bg;
     box-shadow: 2px 3px 7px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 5px 5px 0 0;
 }
 
 :local(.userlist) {
@@ -37,6 +40,7 @@
     justify-content: space-around;
     padding: 2%;
     cursor: pointer;
+    font-family: 'Raleway', sans-serif;
     &:hover {
         background-color: rgba(245, 127, 23, 0.2);
     }
@@ -47,7 +51,10 @@
 }
 
 :local(.username) {
-    font-family: 'Raleway', sans-serif;
+    text-transform: capitalize;
+    flex: 2;
+    padding-left: 20px;
+    margin: 0;
 }
 
 :local(.online) {
@@ -63,7 +70,11 @@
 }
 
 :local(.searchbox) {
-    box-shadow: 0 -5px 5px -5px $input-box-shadow;
+    background-color : $chat-window-head-theme3;
+    padding: 2%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
 }
 
 :local(.input) {
@@ -72,9 +83,12 @@
     color: white;
     border-radius: 5px;
     padding: 1.5% 5%;
+    width: 70%;
     background: rgba(230, 81, 0, 0.15);
+    transition: 0.2s ease-in;
     &:focus {
-        padding: 3.6% 5%;
+        width: 100%;
+        padding: 1.5% 7%;
         background: rgba(230, 81, 0, 0.30);
     }
 }
