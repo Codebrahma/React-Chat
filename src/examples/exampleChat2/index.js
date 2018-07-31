@@ -2,7 +2,7 @@ import React from 'react';
 import { ChatListProvider, ChatList, ChatListSearch } from '../../components';
 import ExampleChatListHeader from './ExampleChatListHeader';
 import ExampleChatListItem from './ExampleChatListItem';
-import theme from './style.css';
+import theme from './style.scss';
 
 const ExampleChat = (props) => {
     return (

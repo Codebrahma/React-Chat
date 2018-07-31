@@ -1,4 +1,4 @@
-.chatHeader {
+:local(.chatHeader) {
     height: 40px;
     background: rgb(26,35,126);
     color: white;
@@ -7,6 +7,6 @@
     font-family: 'Raleway', sans-serif;
 }
 
-.icon {
+:local(.icon) {
     padding: 9%;
 }

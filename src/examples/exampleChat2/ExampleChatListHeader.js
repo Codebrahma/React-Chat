@@ -3,7 +3,7 @@ import { themr } from 'react-css-themr';
 
 const ExampleChatListHeader = (props) => {
     const { theme } = props;
-    console.log(theme)
+    console.log(props)
     return (
         <div className={theme.chatHeader}>
             <span className={theme.icon}>
