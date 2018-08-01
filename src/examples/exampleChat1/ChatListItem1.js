@@ -1,5 +1,4 @@
 import React from 'react'
-import Icon from '../Icon'
 
 const ChatListItem1 = (props) => {
   const {lastSeen} = props

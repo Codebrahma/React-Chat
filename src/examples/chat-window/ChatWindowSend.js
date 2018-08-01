@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Icon from '../Icon'
 
 const ChatWindowSend = (props) => (
   <div className={props.chatSendClass}>
@@ -13,7 +12,7 @@ const ChatWindowSend = (props) => (
         value={props.inputValue}
       />
       <button type="submit">
-        <Icon iconClass="fa-arrow-alt-circle-right" />
+        <i className="fas fa-arrow-alt-circle-right" />
       </button>
     </form>
   </div>

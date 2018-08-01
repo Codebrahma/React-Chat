@@ -29,7 +29,7 @@ class DemoChatList extends Component {
                         />
                     </div>
                 }
-                <DemoChatButton iconClass={this.state.open ? "fa-times" : "fa-comment"} handleChatListProvider={this.handleChatProvider} />
+                <DemoChatButton iconClass={this.state.open ? "fas fa-times" : "far fa-comment"} handleChatListProvider={this.handleChatProvider} />
             </div>
         );
     }

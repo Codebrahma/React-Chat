@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { ChatListProvider, ChatList, ChatListSearch } from '../../components';
-import DemoChatWindowHeader from './DemoChatListHeader';
 import WindowIndex from '../chat-window'
-import ExampleChat1 from '../exampleChat1'
 
 
 class DemoChatWindowBox extends Component {

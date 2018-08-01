@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Icon from '../Icon'
 
 const ChatWindowHeader = (props) => {
 
@@ -9,7 +8,7 @@ const ChatWindowHeader = (props) => {
       <img src={props.myData.avatar} alt={props.myData.name.slice(0, 1).toUpperCase()} className="chat-window-avatar" />
       <span className="chat-user-name">{props.myData.name}</span>
       <div onClick={props.handleCloseClick}>
-        <Icon iconClass="fa-times" />
+        <i className="fas fa-times" />
       </div>
     </div>
   )

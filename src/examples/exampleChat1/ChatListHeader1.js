@@ -1,9 +1,8 @@
 import React from 'react'
-import Icon from '../Icon'
 
-const ChatListHeader1 = ({userData}) => (
+const ChatListHeader1 = () => (
   <div className="example-header1">
-    <span><Icon iconClass="fa-bars" /></span>
+    <span><i className="fas fa-bars" /></span>
     Users
   </div>
 )

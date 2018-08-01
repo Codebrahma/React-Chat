@@ -1,5 +1,4 @@
 import React from 'react';
-import Icon from '../Icon';
 
 
 const DemoChatButton = (props) => {
@@ -10,7 +9,7 @@ const DemoChatButton = (props) => {
 
     return (
         <div className="chat-popup-button" onClick={handleClick}>
-            <Icon iconClass={props.iconClass} />
+            <i className={props.iconClass} />
         </div>
     )
 }
