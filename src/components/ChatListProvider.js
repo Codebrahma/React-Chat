@@ -1,15 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-    ChatListItem,
-  } from './index.js'
 import ChatListHeader from './ChatListHeader'
 import ChatList from './ChatList'
 import ChatListSearch from './ChatListSearch'
+import { themr } from 'react-css-themr';
+import defaultTheme from '../themes/_default_theme.scss'
 
 const ChatListProvider = (props) => {
+  const { theme } = props;
   return (
-    <div className={`${props.chatProviderClass} chat-list-wrapper`}>
+    <div className={theme.provider}>
       {
         props.children
           ? ( Array.isArray(props.children)
@@ -18,9 +18,9 @@ const ChatListProvider = (props) => {
             )
           : (
               <div>
-                <props.customHeader userData={props.userData} />
+                <props.customHeader userData={props.userData} {...props}/>
                 <props.customList userData={props.userData} {...props}/>
-                <props.customSearch handleSearchChange={props.handleSearchChange}/>
+                <props.customSearch handleSearchChange={props.handleSearchChange} />
               </div>
             )
       }
@@ -43,4 +43,4 @@ ChatListProvider.defaultProps = {
   customSearch: ChatListSearch,
 }
 
-export default ChatListProvider
+export default themr('ThemedChatListProvider',defaultTheme, { composeTheme : "softly" })(ChatListProvider)

@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import defaultTheme from '../themes/_default_theme.scss'
+import { themr } from 'react-css-themr';
 
 const ChatListItem = (props) => {
   const {lastSeen} = props
@@ -7,12 +9,12 @@ const ChatListItem = (props) => {
   const lastSeenMinutes = Math.ceil(lastSeenTime / (1000*60))
   const lastSeenHours = Math.floor(lastSeenMinutes / 60)
   const lastSeenDays = Math.floor(lastSeenHours / 24)
-  
+  const { theme } = props;
   return (
-    <div id={props.id} className="user-item" onClick={() => props.handleChatItemClick(props.id)}>
-      <img src={props.avatar} className="user-avatar" alt={props.name.slice(0,1).toUpperCase()}/>
-      <span className="user-name">{props.name}</span>
-      <span className={props.onlineStatus}>
+    <div id={props.id} className={theme.useritem} onClick={() => props.handleChatItemClick(props.id)}>
+      <img src={props.avatar} className={theme.useravatar} alt={props.name.slice(0,1).toUpperCase()}/>
+      <span className={theme.username}>{props.name}</span>
+      <span className={theme[props.onlineStatus]}>
         { props.onlineStatus === "offline" && (
             lastSeenDays > 0
               ? `${lastSeenDays}d`
@@ -36,4 +38,4 @@ ChatListItem.propTypes = {
   handleChatItemClick: PropTypes.func.isRequired
 }
 
-export default ChatListItem
+export default themr('ThemedChatListItem', defaultTheme, { composeTheme : "softly" })(ChatListItem)

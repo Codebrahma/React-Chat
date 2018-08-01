@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:500,700');
+@import '../root/colors.scss';
+:local(.header) {
+    height: 40px;
+    background: $chat-window-head-theme3;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    align-content: flex-start;
+    padding: 0.5% 2.5%;
+    font-family: 'Raleway', sans-serif;
+}
+
+:local(.icon) {
+    padding: 9%;
+}
+
+:local(.provider) {
+    background: $chat-bg;
+    box-shadow: 2px 3px 7px 2px rgba(0, 0, 0, 0.5);
+}
+
+:local(.userlist) {
+    background: white;
+    overflow-y: scroll;
+    max-height: 60vh;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+:local(.useritem) {
+    border-bottom: 1.2px solid #aa9b9b9a;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    padding: 2%;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba(245, 127, 23, 0.2);
+    }
+}
+
+:local(.useravatar) {
+    border-radius: 50%;
+}
+
+:local(.username) {
+    font-family: 'Raleway', sans-serif;
+}
+
+:local(.online) {
+    @extend :local(.useravatar);
+    height: 8px;
+    width: 8px;
+    background-color: $online;
+}
+
+:local(.offline) {
+    height: 15px;
+    width: 20px;
+}
+
+:local(.searchbox) {
+    box-shadow: 0 -5px 5px -5px $input-box-shadow;
+}
+
+:local(.input) {
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 1.5% 5%;
+    background: rgba(230, 81, 0, 0.15);
+    &:focus {
+        padding: 3.6% 5%;
+        background: rgba(230, 81, 0, 0.30);
+    }
+}

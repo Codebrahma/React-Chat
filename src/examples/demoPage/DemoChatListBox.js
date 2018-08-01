@@ -23,8 +23,7 @@ class DemoChatList extends Component {
                 {
                     this.state.open &&
                     <div className="demo-chat-list animated slideInRight">
-                        <ChatListProvider
-                          userData={this.props.userData}
+                        <ChatListProvider userData={this.props.userData}
                           handleChatItemClick={(id) => this.props.updateChatWindow(id)}
                           handleSearchChange={this.props.handleSearchChange}
                         />

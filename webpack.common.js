@@ -1,7 +1,7 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const path = require('path');
+const path = require('path');
 
 const devMode = process.env.NODE_ENV !== 'production';
 const htmlWebpackPlugin = new HtmlWebPackPlugin({
@@ -30,6 +30,7 @@ module.exports = {
         test: /\.css$/,
         include: [
           'src',
+          'node_modules'
         ],
         use: [
           MiniCssExtractPlugin.loader,
@@ -37,11 +38,12 @@ module.exports = {
         ],
       },
       {
-        test: /\.s?[ac]ss$/,
+        test: /\.scss$/,
+        include: path.resolve(__dirname, './src'),
         use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader',
+          'style-loader',
+          `${require.resolve('css-loader')}?sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]`,
+          `${require.resolve('sass-loader')}?sourceMap`,
         ],
       },
       {

@@ -3,7 +3,7 @@ import styles from './demopageStyle.scss';
 import DemoPageNavbar from './DemoPageNavbar';
 import DemoChatListBox from './DemoChatListBox';
 import DemoChatWindowBox from './DemoChatWindowBox';
-import './resources/animate.css';
+import './resources/animate.scss';
 
 
 class DemoPage extends Component {

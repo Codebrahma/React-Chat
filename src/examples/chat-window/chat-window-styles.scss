@@ -1,9 +1,5 @@
-.chat-window-container {
-    max-width: 350px !important;
-    border-radius: 5px;
-    .animated {
-        animation-duration: 0.1s;
-    }
+
+
     .chat-window-header {
         background: $chat-header;
         padding: 5px 10px;
@@ -31,6 +27,9 @@
         height: 50vh;
         padding: 5px 10px;
         overflow-y: scroll;
+        .animated {
+            animation-duration: 0.1s;
+        }
         .message {
             margin: 4px;
             word-wrap: break-word;
@@ -91,4 +90,3 @@
             }
         }
     }
-}
