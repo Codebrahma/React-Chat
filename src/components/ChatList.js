@@ -6,12 +6,13 @@ import { themr } from 'react-css-themr';
 
 const ChatList = (props) => {
     const { theme } = props;
+    let filteredUserData = props.filteredUserData || props.userData.filter((user) => user.name.toLowerCase().includes(props.searchedFor.toLowerCase()))
     return (
     <div className={theme.userlist}>
       {
-        props.userData.length === 0
+        filteredUserData.length === 0
           ? <span>No User Found</span>
-          : props.userData.map(item => (
+          : filteredUserData.map(item => (
               <props.customChatListItem
                 key={item.id}
                 id={item.id}
