@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class ChatWindowBody extends Component {
-  // constructor(props) {
-  //   super(props)
-  // }
+  
   componentDidUpdate(nextProps) {
     const lastMessageIndex = nextProps.messages.length;
        const messageContainer = document.getElementById(`window-${this.props.myData.id}`)

@@ -15,31 +15,16 @@ class WindowIndex extends Component {
     }
   }
 
-  handleInputMessage = (e) => {
-    this.setState({
-      inputMessage: e.target.value,
-    })
-  }
-
-  onSend = (e) => {
-    this.state.inputMessage.trim() !== ''
-      ? this.props.handleMessages({ message: this.state.inputMessage, userId: this.props.myData.id })
-      : null
-    this.setState(() => ({
-      inputMessage: '',
-    }))
-    e.preventDefault()
-  }
-
   render() {
     return (
       <ChatListProvider
-        myData={this.props.myData}
-        userData={this.props.userData}
-        handleInputMessage={this.handleInputMessage}
+        // myData={this.props.myData}
+        // userData={this.props.userData}
+        // handleInputMessage={this.handleInputMessage}
         onSend={this.onSend}
         inputValue={this.state.inputMessage}
-        messages={this.props.messages}
+        // messages={this.props.messages}
+        {...this.props}
       >
         <ChatWindowHeader {...this.props} />
         <ChatWindowBody />
