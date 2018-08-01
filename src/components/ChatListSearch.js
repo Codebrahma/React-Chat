@@ -11,7 +11,7 @@ const ChatListSearch = (props) => {
       className={theme.input}
       type="text"
       placeholder="Search users..."
-      onChange={props.handleSearchChange}
+      onChange={(e)=>{props.handleSearchChange(e.target.value)}}
     />
   </div>
   )

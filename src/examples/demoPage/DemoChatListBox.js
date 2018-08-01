@@ -16,16 +16,23 @@ class DemoChatList extends Component {
             open: !prevState.open
         }))
     }
+    // Custom searchbar functionality can be defined here
+    // handleSearchChange =(value) => {
+    //     console.log(value)
+    // }
 
     render() {
+        // filteredData also need to be passed if using custom search functionality
         return (
             <div>
                 {
                     this.state.open &&
                     <div className="demo-chat-list animated slideInRight">
-                        <ChatListProvider userData={this.props.userData}
-                          handleChatItemClick={(id) => this.props.updateChatWindow(id)}
-                          handleSearchChange={this.props.handleSearchChange}
+                        <ChatListProvider 
+                            userData={this.props.userData}
+                            handleChatItemClick={(id) => this.props.updateChatWindow(id)}
+                            // handleSearchChange={this.handleSearchChange}
+                            
                         />
                     </div>
                 }

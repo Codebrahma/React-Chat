@@ -3,7 +3,7 @@
   "extends": "airbnb",
   "rules": {
     "react/jsx-filename-extension": 0,
-    "import/no-extraneous-dependencies": "[error, { devDependencies: true }]",
+    "import/no-extraneous-dependencies": "[error, { devDependencies: true }]"
   },
   "parserOptions": {
     "ecmaFeatures": {
@@ -11,9 +11,9 @@
     }
   },
   "plugins": [
-    "react",
+    "react"
   ],
   "env": {
     "browser": true
-  },
+  }
 }
