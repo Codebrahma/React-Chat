@@ -5,9 +5,11 @@
   "description": "react chat",
   "main": "index.js",
   "scripts": {
+    "postinstall": "node .githooks/",
+    "prestart": "node .githooks/",
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production --config webpack.prod.js",
-    "lint": "eslint ./ --ext .jsx --ext .js",
+    "lint": "./node_modules/.bin/eslint ./ --ext .jsx --ext .js",
     "test": "mocha --require babel-core/register --require test/testSetup.js 'test/*.test.js'",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build-storybook": "build-storybook"
