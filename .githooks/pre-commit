@@ -1,0 +1,49 @@
+#!/bin/bash
+#
+
+language="javascript"
+
+echo -e "\nRunning Lint...\n"
+
+if [ "$language" = "ruby" ]
+then
+    files=$(git diff --cached --name-only --diff-filter=ACM | grep "\.rb$")
+
+    if [ "$files" = "" ]; then
+        exit 0
+    fi
+
+    if ! rubocop ${files}
+    then
+        echo -e "\033[31mRubocop validation failed. Your commit contains files that should pass rubocop but do not. Please fix the errors and try again.\033[0m"
+        exit 1
+    else
+        echo -e "\033[32mRubocop validation passed.\033[0m"
+    fi
+
+elif [ "$language" = "javascript" ]
+then
+    if npm run lint
+    then
+      echo -e "\033[32mTSLint validation passed.\033[0m"
+    else
+      echo -e "\033[31mESLint validation failed. Your commit contains files that should pass ESLint but do not. Please fix the errors and try again.\033[0m"
+      exit 1
+    fi
+
+elif [ "$language" = "typescript" ]
+then
+    files=$(git diff --cached --name-only --diff-filter=ACM | grep "\.ts$")
+
+    if [ "$files" = "" ]; then
+        exit 0
+    fi
+
+    if ! tslint ${files} --project `pwd`
+    then
+        echo -e "\033[31mTSLint validation failed. Your commit contains files that should pass TSLint but do not. Please fix the TSLint errors and try again.\033[0m"
+        exit 1
+    else
+        echo -e "\033[32mTSLint validation passed.\033[0m"
+    fi
+fi
