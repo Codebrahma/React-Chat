@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Home from './examples/Home';
+import { userData, mySelf } from './data';
+import DemoPage from './demoPage';
 
 const Index = () => (
   <div>
-    <Home />
+    <DemoPage userData={userData} myData={mySelf} />
   </div>
 );
 

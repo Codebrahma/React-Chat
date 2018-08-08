@@ -9,10 +9,14 @@ import ChatWindowBody from './ChatWindowBody';
 const ChatWindowProvider = (props) => {
   const { theme, children, userData } = props;
 
-  const CustomItems = (Array.isArray(children)
-    ? children.map(child => React.cloneElement(child, { ...props }))
-    : React.cloneElement(children, { ...props })
-  );
+  let CustomItems;
+
+  if (children) {
+    CustomItems = (Array.isArray(children)
+      ? children.map(child => React.cloneElement(child, { ...props }))
+      : React.cloneElement(children, { ...props })
+    );
+  }
   return (
     <div className={theme.provider}>
       {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Proptypes from 'prop-types';
 import DemoPageNavbar from './DemoPageNavbar';
 import './resources/animate.scss';
-import { ChatProvider, ChatWindowBox } from '../../components';
+import { ChatProvider, ChatWindowBox } from '../components';
 
 import './demopageStyle.scss';
 
