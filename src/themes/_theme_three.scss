@@ -92,3 +92,103 @@
         background: rgba(230, 81, 0, 0.30);
     }
 }
+
+:local(.windowHeader) {
+    background:  $chat-window-head-theme3;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $chat-head-text;
+    border-radius: 5px 5px 0 0;
+}
+
+:local(.chatWindowAvatar) {
+    border-radius: 50%;
+    max-height: 40px;
+    max-width: 40px;
+    margin-right: 20px;
+}
+
+:local(.chatWindowBody) {
+    height: 50vh;
+    padding: 5px 10px;
+    overflow-y: scroll;
+    background-color: #ffffff;
+    .animated {
+        animation-duration: 0.1s;
+    }
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+        background: $chat-head-text;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $scroll-bg;
+        border-radius: 5px;
+    }
+}
+
+:local(.message) {
+    margin: 4px;
+    word-wrap: break-word;
+    font-size: 14px;
+    max-width: 60%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    clear: both;
+}
+:local(.sent) {
+    background-color: rgba(245,127,23, 0.86);
+    color: white;
+    float: right;
+}
+:local(.recieved) {
+    background: rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.73);
+    float: left;
+}
+
+:local(.chatSendInput) {
+    box-shadow: 0 -5px 16px -5px $input-box-shadow;
+    height: 35px;
+    padding: 2%;
+    background-color: $chat-window-head-theme3;
+    form {
+        display: flex;
+        height: 100%;
+        padding: 0;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1em;
+        button {
+            background: none;
+            border: 0;
+            color: white;
+            cursor: pointer;
+            i {
+                font-size: 16px;
+            }
+        }
+        .emoji-button {
+            margin: 0% 1% 0% 2%;
+        }
+    }
+}
+
+:local(.messageInput){
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    padding: 2% 3%;
+    width: 80%;
+    background: transparent;
+    color: white;
+    transition: 0.2s ease-in;
+    border-bottom: 1px solid rgba(255,255,255,0);
+    &::placeholder {
+        color: white;
+        opacity: 0.5;
+    }
+}

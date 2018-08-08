@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { themr } from 'react-css-themr';
+import defaultTheme from '../../themes/_default_theme.scss';
 
 class ChatWindowBody extends Component {
   componentDidUpdate(nextProps) {
@@ -15,12 +17,12 @@ class ChatWindowBody extends Component {
   }
 
   render() {
-    const { messages, myData, chatBodyClass } = this.props;
+    const { theme, messages, myData } = this.props;
     return (
-      <div className={chatBodyClass} id={`window-${myData.id}`}>
+      <div className={theme.chatWindowBody} id={`window-${myData.id}`}>
         {
           messages.map((message, index) => (
-            <div id={`m-${myData.id}-${index + 1}`} className={`${myData.id === message.userId ? 'sent' : 'received'} message animated zoomIn`}>
+            <div key={`${myData.id}${index + 1}`} id={`m-${myData.id}-${index + 1}`} className={`${myData.id === message.userId ? theme.sent : theme.recieved} ${theme.message} animated zoomIn`}>
               {message.message}
             </div>
           ))
@@ -31,13 +33,9 @@ class ChatWindowBody extends Component {
 }
 
 ChatWindowBody.propTypes = {
-  chatBodyClass: PropTypes.string,
   myData: PropTypes.oneOfType([PropTypes.object]).isRequired,
   messages: PropTypes.arrayOf(PropTypes.object).isRequired,
+  theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
 
-ChatWindowBody.defaultProps = {
-  chatBodyClass: 'chat-window-body',
-};
-
-export default ChatWindowBody;
+export default themr('ThemedChatWindowBody', defaultTheme, { composeTheme: 'softly' })(ChatWindowBody);

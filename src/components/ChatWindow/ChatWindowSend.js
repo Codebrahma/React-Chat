@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { themr } from 'react-css-themr';
+import defaultTheme from '../../themes/_default_theme.scss';
 
 class ChatWindowSend extends Component {
   constructor(props) {
@@ -29,13 +31,13 @@ class ChatWindowSend extends Component {
   }
 
   render() {
-    const { chatSendClass } = this.props;
+    const { theme } = this.props;
     const { message } = this.state;
     return (
-      <div className={chatSendClass}>
+      <div className={theme.chatSendInput}>
         <form onSubmit={this.onSend}>
           <input
-            className={`${chatSendClass}-input`}
+            className={theme.messageInput}
             type="text"
             placeholder="Your message..."
             onChange={this.handleInputMessage}
@@ -51,13 +53,10 @@ class ChatWindowSend extends Component {
 }
 
 ChatWindowSend.propTypes = {
-  chatSendClass: PropTypes.string,
   handleMessages: PropTypes.func.isRequired,
   myData: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
 
-ChatWindowSend.defaultProps = {
-  chatSendClass: 'chat-window-send',
-};
 
-export default ChatWindowSend;
+export default themr('ThemedChatWindowSend', defaultTheme, { composeTheme: 'softly' })(ChatWindowSend);
