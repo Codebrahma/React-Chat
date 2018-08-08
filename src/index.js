@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './index.scss';
-import Home from './examples/Home'
+import './index.scss';
+import Home from './examples/Home';
 
 const Index = () => (
   <div>

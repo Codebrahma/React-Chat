@@ -4,12 +4,12 @@ import { withInfo } from '@storybook/addon-info';
 import './styles.scss';
 
 storiesOf('Writing your own themes', module)
-    .add('Boilerplate for theme',
-            withInfo({
-            inline: true,    
-            header: false,
-            source: false,
-            text : `
+  .add('Boilerplate for theme',
+    withInfo({
+      inline: true,
+      header: false,
+      source: false,
+      text: `
             ~~~
             
             :local(.provider) {
@@ -52,8 +52,11 @@ storiesOf('Writing your own themes', module)
                 // Your custom styling for search input goes here.
 }
             ~~~
-        `})(() => {
-                return (<div className="demo-info-container">
-                            <p>You can create your own themes by following the boilerplate instructions.</p>
-                        </div>)
-                }))
+        `,
+    })(() => (
+      <div className="demo-info-container">
+        <p>
+You can create your own themes by following the boilerplate instructions.
+        </p>
+      </div>
+    )));

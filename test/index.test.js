@@ -7,6 +7,6 @@ import Home from '../src/components/Home';
 describe('<Home />', () => {
   it('Has two classes with name of home', () => {
     const wrapper = shallow(<Home />);
-    expect(wrapper.find(".home")).to.have.length(2);
+    expect(wrapper.find('.home')).to.have.length(2);
   });
 });

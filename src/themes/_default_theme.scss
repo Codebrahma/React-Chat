@@ -2,6 +2,7 @@
 :local(.provider) {
     background: $chat-bg;
     box-shadow: 2px 3px 7px 2px rgba(0, 0, 0, 0.5);
+    width: 300px;
 }
 
 :local(.userlist) {
@@ -18,6 +19,28 @@
     background: $chat-header;
     color: $chat-head-text;
     padding: 10px 10px;
+}
+
+:local(.windowHeader) {
+    background: $chat-header;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $chat-head-text;
+    border-radius: 5px 5px 0 0;
+}
+
+:local(.chatWindowAvatar) {
+    border-radius: 50%;
+    max-height: 40px;
+    max-width: 40px;
+    margin-right: 20px;
+}
+
+:local(.chatUserName) {
+    flex: 2;
+    text-transform: capitalize;
 }
 
 :local(.icon) {
@@ -44,7 +67,7 @@
 }
 
 :local(.online) {
-    @extend :local(.useravatar);
+    @extend:local(.useravatar);
     height: 8px;
     width: 8px;
     background-color: $online;
@@ -67,4 +90,19 @@
     width: 100%;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+
+:local(.chatPopupButton) {
+    width: 45px;
+    height: 45px;
+    position: fixed;
+    bottom: 0.5em;
+    right: 0.5em;
+    border-radius: 50%;
+    cursor: pointer;
+    justify-content: space-around;
+    align-items: center;
+    display: grid;
+    background: rgb(255, 255, 255);
+    box-shadow: 2px 4px 9px 3px rgba(0, 0, 0, 0.5);
 }
