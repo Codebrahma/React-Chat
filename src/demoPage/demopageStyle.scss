@@ -99,19 +99,4 @@
             border-radius: 5px;
         }
     }
-    .chat-popup-button {
-        z-index: 1000;
-        width: 45px;
-        height: 45px;
-        position: fixed;
-        bottom: 0.5em;
-        right: 0.5em;
-        border-radius: 50%;
-        cursor: pointer;
-        justify-content: space-around;
-        align-items: center;
-        display: flex;
-        background: rgb(255, 255, 255);
-        box-shadow: 2px 4px 9px 3px rgba(0, 0, 0, 0.5);
-    }
 }
