@@ -1,20 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const Header = styled.div`
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  background: #2f89fc;
-  color: #f1f1f1;
-  padding: 10px 10px;
-`;
+import Header from '../customcomponents/Header';
 
 const ChatListHeader = (props) => {
   const { userData } = props;
   return (
-    <Header>
-      <span>
+    <Header padding="5% 4%">
+      <span style={{ fontSize: '0.7em' }}>
 Active Users (
         {userData.filter(data => data.onlineStatus === 'online').length}
 )

@@ -1,27 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const ListItem = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 10px 0;
-  cursor: pointer;
-`;
-
-const Avatar = styled.img`
-  border-radius: 50%;
-  height: ${({ height }) => height || '37px'};
-`;
-
-const UserName = styled.span`
-  text-transform: capitalize;
-  flex: 2;
-  padding-left: 20px;
-  margin: 0;
-  font-size: ${({ fontSize }) => fontSize || '0.9rem'}
-`;
+import UserName from '../customcomponents/UserName';
+import Avatar from '../customcomponents/Avatar';
+import ListItem from '../customcomponents/ListItem';
 
 const ChatListItem = (props) => {
   const {
@@ -47,7 +28,7 @@ const ChatListItem = (props) => {
       <UserName>
         {name}
       </UserName>
-      <span>
+      <span style={{ fontSize: '0.7em', color: '#a1a1a1' }}>
         {onlineStatus === 'offline' && computedLastSeen}
       </span>
     </ListItem>

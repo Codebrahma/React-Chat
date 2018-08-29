@@ -1,29 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const Avatar = styled.img`
-border-radius: 50%;
-height: ${({ height }) => height || '37px'};
-`;
-
-const UserName = styled.span`
-  text-transform: capitalize;
-  flex: 2;
-  padding-left: 20px;
-  margin: 0;
-  font-size: ${({ fontSize }) => fontSize || '0.9rem'}
-`;
-
-const Header = styled.div`
-background: #2f89fc;
-    padding: 5px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #f1f1f1;
-    border-radius: 5px 5px 0 0;
-`;
+import Avatar from '../customcomponents/Avatar';
+import UserName from '../customcomponents/UserName';
+import Header from '../customcomponents/Header';
 
 const ChatWindowHeader = (props) => {
   const { myData, handleCloseClick } = props;

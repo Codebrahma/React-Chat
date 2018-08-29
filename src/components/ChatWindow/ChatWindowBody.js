@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Message from '../customcomponents/Message';
 
 const WindowBody = styled.div`
-height: 50vh;
+height: ${({ height }) => height || '40vh'};
 padding: 5px 10px;
 overflow-y: scroll;
 .animated {
@@ -19,17 +20,6 @@ overflow-y: scroll;
     background: $scroll-bg;
     border-radius: 5px;
 }
-`;
-
-const MessageText = styled.div`
-margin: 4px;
-    word-wrap: break-word;
-    font-size: 14px;
-    max-width: 60%;
-    padding: 8px 10px;
-    border-radius: 8px;
-    clear: both;
-    background: #b8dff0;
 `;
 
 const style = {
@@ -60,9 +50,9 @@ class ChatWindowBody extends Component {
       <WindowBody id={`window-${myData.id}`}>
         {
           messages.map((message, index) => (
-            <MessageText key={`${myData.id}${index + 1}`} id={`m-${myData.id}-${index + 1}`} style={myData.id === message.userId ? style.sent : style.recieved}>
+            <Message key={`${myData.id}${index + 1}`} id={`m-${myData.id}-${index + 1}`} style={myData.id === message.userId ? style.sent : style.recieved}>
               {message.message}
-            </MessageText>
+            </Message>
           ))
         }
       </WindowBody>
