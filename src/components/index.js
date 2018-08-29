@@ -10,3 +10,4 @@ export { default as ChatWindowHeader } from './ChatWindow/ChatWindowHeader';
 export { default as ChatWindowSend } from './ChatWindow/ChatWindowSend';
 export { default as ChatWindowBody } from './ChatWindow/ChatWindowBody';
 export { default as ChatWindowProvider } from './ChatWindow/ChatWindowProvider';
+export { default as Chat } from './Chat/ChatContainer';
