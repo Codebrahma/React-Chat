@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Proptypes from 'prop-types';
+import { Provider } from 'rebass';
+
 import ChatProvider from '../ChatList/ChatProvider';
 import ChatWindowBox from '../ChatWindow/ChatWindowBox';
 
@@ -21,13 +23,13 @@ class Chat extends Component {
     const { userData } = this.props;
     const { chatUserId } = this.state;
     return (
-      <div>
+      <Provider>
         <ChatProvider
           updateChatWindow={this.updateWindow}
           userData={userData}
         />
         {chatUserId && <ChatWindowBox userId={chatUserId} {...this.props} />}
-      </div>
+      </Provider>
     );
   }
 }
