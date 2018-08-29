@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropType from 'prop-types';
 import ChatWindow from './ChatWindow';
-import theme from '../../themes/_theme_two.scss';
-import themeb from '../../themes/_theme_three.scss';
 
 class ChatWindowBox extends Component {
   constructor(props) {
@@ -26,7 +24,6 @@ class ChatWindowBox extends Component {
       });
     }
   }
-
 
   handleMessages = ({ userId, message }) => {
     this.setState(prevState => ({
@@ -55,7 +52,6 @@ class ChatWindowBox extends Component {
         {self && (
         <div className="">
           <ChatWindow
-            theme={theme}
             handleMessages={this.handleMessages}
             myData={myData}
             userData={userData.find(user => user.id === userId)}
@@ -67,7 +63,6 @@ class ChatWindowBox extends Component {
         {other && (
         <div className="">
           <ChatWindow
-            theme={themeb}
             handleMessages={this.handleMessages}
             userData={myData}
             myData={userData.find(user => user.id === userId)}
