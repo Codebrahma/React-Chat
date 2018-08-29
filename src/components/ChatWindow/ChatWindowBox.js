@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 import PropType from 'prop-types';
+import styled from 'styled-components';
 import ChatWindow from './ChatWindow';
+
+const WindowBox = styled.div`
+  display: flex;
+  width: fit-content;
+  position: fixed;
+  left: 0.5em;
+  bottom: 0.5em;
+  z-index: 1000;
+  justify-content: space-between;
+`;
 
 class ChatWindowBox extends Component {
   constructor(props) {
@@ -29,7 +40,7 @@ class ChatWindowBox extends Component {
     this.setState(prevState => ({
       messages: [...prevState.messages, { userId, message }],
     }));
-  }
+  };
 
   handleChatBoxClose = (win) => {
     if (win === '1') {
@@ -42,36 +53,32 @@ class ChatWindowBox extends Component {
         other: false,
       });
     }
-  }
+  };
 
   render() {
     const { self, messages, other } = this.state;
     const { myData, userData, userId } = this.props;
     return (
-      <div className="demo-chat-window-box">
+      <WindowBox>
         {self && (
-        <div className="">
-          <ChatWindow
-            handleMessages={this.handleMessages}
-            myData={myData}
-            userData={userData.find(user => user.id === userId)}
-            messages={messages}
-            handleCloseClick={() => this.handleChatBoxClose('1')}
-          />
-        </div>
+        <ChatWindow
+          handleMessages={this.handleMessages}
+          myData={myData}
+          userData={userData.find(user => user.id === userId)}
+          messages={messages}
+          handleCloseClick={() => this.handleChatBoxClose('1')}
+        />
         )}
         {other && (
-        <div className="">
-          <ChatWindow
-            handleMessages={this.handleMessages}
-            userData={myData}
-            myData={userData.find(user => user.id === userId)}
-            messages={messages}
-            handleCloseClick={() => this.handleChatBoxClose('2')}
-          />
-        </div>
+        <ChatWindow
+          handleMessages={this.handleMessages}
+          userData={myData}
+          myData={userData.find(user => user.id === userId)}
+          messages={messages}
+          handleCloseClick={() => this.handleChatBoxClose('2')}
+        />
         )}
-      </div>
+      </WindowBox>
     );
   }
 }

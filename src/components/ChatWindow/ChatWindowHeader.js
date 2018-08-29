@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const Avatar = styled.img`
 border-radius: 50%;
+height: ${({ height }) => height || '37px'};
 `;
 
 const UserName = styled.span`
@@ -15,12 +16,12 @@ const UserName = styled.span`
 `;
 
 const Header = styled.div`
-background: $chat-header;
+background: #2f89fc;
     padding: 5px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: $chat-head-text;
+    color: #f1f1f1;
     border-radius: 5px 5px 0 0;
 `;
 
