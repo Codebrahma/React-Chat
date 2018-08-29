@@ -1,7 +1,5 @@
 import React from 'react';
-import { themr } from 'react-css-themr';
 import PropTypes from 'prop-types';
-import defaultTheme from '../../themes/_default_theme.scss';
 import ChatWindowHeader from './ChatWindowHeader';
 import ChatWindowSend from './ChatWindowSend';
 import ChatWindowBody from './ChatWindowBody';
@@ -51,4 +49,4 @@ ChatWindowProvider.defaultProps = {
   children: null,
 };
 
-export default themr('ThemedChatWindowProvider', defaultTheme, { composeTheme: 'softly' })(ChatWindowProvider);
+export default ChatWindowProvider;

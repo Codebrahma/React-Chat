@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { themr } from 'react-css-themr';
-import defaultTheme from '../../themes/_default_theme.scss';
 
 class ChatWindowSend extends Component {
   constructor(props) {
@@ -59,4 +57,4 @@ ChatWindowSend.propTypes = {
 };
 
 
-export default themr('ThemedChatWindowSend', defaultTheme, { composeTheme: 'softly' })(ChatWindowSend);
+export default ChatWindowSend;

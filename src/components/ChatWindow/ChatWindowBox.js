@@ -53,7 +53,7 @@ class ChatWindowBox extends Component {
     return (
       <div className="demo-chat-window-box">
         {self && (
-        <div className="demo-chat-window self">
+        <div className="">
           <ChatWindow
             theme={theme}
             handleMessages={this.handleMessages}
@@ -65,7 +65,7 @@ class ChatWindowBox extends Component {
         </div>
         )}
         {other && (
-        <div className="demo-chat-window other">
+        <div className="">
           <ChatWindow
             theme={themeb}
             handleMessages={this.handleMessages}
