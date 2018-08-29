@@ -1,12 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { themr } from 'react-css-themr';
 import ChatListItem from './ChatListItem';
-import defaultTheme from '../../themes/_default_theme.scss';
+
+import styled from 'styled-components';
+
+const List = styled.div`
+margin: 5px 0;
+padding: 0 20px;
+overflow-y: scroll;
+height: 60vh;
+color: #3b444b;
+`
 
 const ChatList = (props) => {
   const {
-    theme, filteredUserData, userData, searchedFor, customChatListItem,
+    filteredUserData, userData, searchedFor, customChatListItem,
   } = props;
   const filteredUsers = filteredUserData || userData.filter(
     user => user.name.toLowerCase()
@@ -15,7 +23,7 @@ const ChatList = (props) => {
 
   const ChatItem = customChatListItem;
   return (
-    <div className={theme.userlist}>
+    <List>
       {
         filteredUsers.length === 0
           ? (
@@ -36,7 +44,7 @@ const ChatList = (props) => {
             />
           ))
       }
-    </div>
+    </List>
   );
 };
 
@@ -44,7 +52,6 @@ ChatList.propTypes = {
   userData: PropTypes.oneOfType([PropTypes.array]).isRequired,
   filteredUserData: PropTypes.arrayOf(PropTypes.object),
   searchedFor: PropTypes.string,
-  theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
   customChatListItem: PropTypes.func,
 };
 
@@ -54,4 +61,4 @@ ChatList.defaultProps = {
   searchedFor: '',
 };
 
-export default themr('ThemedChatList', defaultTheme, { composeTheme: 'softly' })(ChatList);
+export default ChatList;

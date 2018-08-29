@@ -1,12 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { themr } from 'react-css-themr';
-import defaultTheme from '../../themes/_default_theme.scss';
+import styled from 'styled-components';
+
+const ListItem = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px 0;
+  cursor: pointer;
+`;
+
+const Avatar = styled.img`
+  border-radius: 50%;
+`;
+
+const UserName = styled.span`
+  text-transform: capitalize;
+  flex: 2;
+  padding-left: 20px;
+  margin: 0;
+`;
 
 const ChatListItem = (props) => {
   const {
     lastSeen,
-    theme,
     id,
     avatar,
     name,
@@ -23,15 +40,15 @@ const ChatListItem = (props) => {
   computedLastSeen = lastSeenDays > 0 ? `${lastSeenDays}d` : computedLastSeen;
 
   return (
-    <div id={id} className={theme.useritem} onClick={() => handleChatItemClick(id)}>
-      <img src={avatar} className={theme.useravatar} alt={name.slice(0, 1).toUpperCase()} />
-      <span className={theme.username}>
+    <ListItem id={id} onClick={() => handleChatItemClick(id)}>
+      <Avatar src={avatar} alt={name.slice(0, 1).toUpperCase()} />
+      <UserName>
         {name}
-      </span>
-      <span className={theme[onlineStatus]}>
+      </UserName>
+      <span>
         {onlineStatus === 'offline' && computedLastSeen}
       </span>
-    </div>
+    </ListItem>
   );
 };
 
@@ -41,8 +58,7 @@ ChatListItem.propTypes = {
   name: PropTypes.string.isRequired,
   onlineStatus: PropTypes.string.isRequired,
   handleChatItemClick: PropTypes.func.isRequired,
-  theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
   lastSeen: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
 
-export default themr('ThemedChatListItem', defaultTheme, { composeTheme: 'softly' })(ChatListItem);
+export default ChatListItem;

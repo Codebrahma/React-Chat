@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { themr } from 'react-css-themr';
+import styled from 'styled-components';
 import ChatListHeader from './ChatListHeader';
 import ChatList from './ChatList';
 import ChatListSearch from './ChatListSearch';
-import defaultTheme from '../../themes/_default_theme.scss';
+
+const ThemedProvider = styled.div`
+  background: ${props => (props.background ? props.background : 'rgb(231, 239, 243)')};
+  box-shadow: ${props => (props.boxShadow ? props.boxShadow : '2px 3px 7px 2px rgba(0, 0, 0, 0.5)')};
+  width: ${props => (props.width ? props.width : 200)};
+`;
 
 class ChatListProvider extends Component {
   constructor(props) {
@@ -18,53 +23,39 @@ class ChatListProvider extends Component {
     this.setState({
       searchedFor: value,
     });
-  }
+  };
 
   render() {
-    const {
-      theme, children, userData, handleSearchChange,
-    } = this.props;
+    const { children, userData, handleSearchChange } = this.props;
 
     let CustomItems;
     if (children) {
-      CustomItems = (Array.isArray(children)
-        ? children.map(
-          child => React.cloneElement(
-            child,
-            { ...this.props },
-          ),
-        ) : React.cloneElement(
-          children,
-          { ...this.props },
-        )
-      );
+      CustomItems = Array.isArray(children)
+        ? children.map(child => React.cloneElement(child, { ...this.props }))
+        : React.cloneElement(children, { ...this.props });
     }
 
     const { searchedFor } = this.state;
     return (
-      <div className={theme.provider}>
-        {
-          children
-            ? <CustomItems /> : (
-              <div>
-                <this.props.customHeader
-                  userData={userData}
-                  {...this.props}
-                />
-                <this.props.customList
-                  userData={userData}
-                  searchedFor={searchedFor}
-                  {...this.props}
-                />
-                <this.props.customSearch
-                  handleSearchChange={
-                  handleSearchChange || this.defaultSearchChange
-                }
-                />
-              </div>
-            )
-        }
-      </div>
+      <ThemedProvider>
+        {children ? (
+          <CustomItems />
+        ) : (
+          <div>
+            <this.props.customHeader userData={userData} {...this.props} />
+            <this.props.customList
+              userData={userData}
+              searchedFor={searchedFor}
+              {...this.props}
+            />
+            <this.props.customSearch
+              handleSearchChange={
+                handleSearchChange || this.defaultSearchChange
+              }
+            />
+          </div>
+        )}
+      </ThemedProvider>
     );
   }
 }
@@ -75,8 +66,10 @@ ChatListProvider.propTypes = {
   customSearch: PropTypes.func,
   userData: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
   handleSearchChange: PropTypes.func,
-  theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
 };
 
 ChatListProvider.defaultProps = {
@@ -87,4 +80,4 @@ ChatListProvider.defaultProps = {
   children: null,
 };
 
-export default themr('ThemedChatListProvider', defaultTheme, { composeTheme: 'softly' })(ChatListProvider);
+export default ChatListProvider;

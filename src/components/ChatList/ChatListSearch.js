@@ -1,25 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { themr } from 'react-css-themr';
-import defaultTheme from '../../themes/_default_theme.scss';
+import styled from 'styled-components';
 
-const ChatListSearch = (props) => {
-  const { theme } = props;
-  return (
-    <div className={theme.searchbox}>
-      <input
-        className={theme.input}
-        type="text"
-        placeholder="Search users..."
-        onChange={(e) => { props.handleSearchChange(e.target.value); }}
-      />
-    </div>
-  );
-};
+const SearchBox = styled.div`
+  box-shadow: 0 -5px 5px -5px $input-box-shadow;
+`;
+
+const SearchInput = styled.input`
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+`;
+
+const ChatListSearch = props => (
+  <SearchBox>
+    <SearchInput
+      type="text"
+      placeholder="Search users..."
+      onChange={(e) => {
+        props.handleSearchChange(e.target.value);
+      }}
+    />
+  </SearchBox>
+);
 
 ChatListSearch.propTypes = {
   handleSearchChange: PropTypes.func.isRequired,
-  theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
 
-export default themr('ThemedChatSearch', defaultTheme, { composeTheme: 'softly' })(ChatListSearch);
+export default ChatListSearch;
