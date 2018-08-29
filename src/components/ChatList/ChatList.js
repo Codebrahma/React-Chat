@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import ChatListItem from './ChatListItem';
 
-import styled from 'styled-components';
 
 const List = styled.div`
-margin: 5px 0;
-padding: 0 20px;
+padding: ${({ padding }) => (padding || '0 1em')};
 overflow-y: scroll;
-height: 60vh;
+height: ${({ height }) => height || '40vh'};
 color: #3b444b;
-`
+`;
 
 const ChatList = (props) => {
   const {

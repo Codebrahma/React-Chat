@@ -12,6 +12,7 @@ const ListItem = styled.div`
 
 const Avatar = styled.img`
   border-radius: 50%;
+  height: ${({ height }) => height || '37px'};
 `;
 
 const UserName = styled.span`
@@ -19,6 +20,7 @@ const UserName = styled.span`
   flex: 2;
   padding-left: 20px;
   margin: 0;
+  font-size: ${({ fontSize }) => fontSize || '0.9rem'}
 `;
 
 const ChatListItem = (props) => {

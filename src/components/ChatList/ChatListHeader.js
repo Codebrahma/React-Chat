@@ -8,7 +8,7 @@ const Header = styled.div`
   background: #2f89fc;
   color: #f1f1f1;
   padding: 10px 10px;
-`
+`;
 
 const ChatListHeader = (props) => {
   const { userData } = props;

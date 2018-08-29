@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const ButtonContainer = styled.div`
 width: 100%; 
 height: 50px;
-`
+`;
 
 const PopupButton = styled.div`
 width: 45px;
@@ -20,7 +20,7 @@ align-items: center;
 display: grid;
 background: rgb(255, 255, 255);
 box-shadow: 2px 4px 9px 3px rgba(0, 0, 0, 0.5);
-`
+`;
 
 const ChatButton = (props) => {
   const handleClick = () => {
@@ -37,11 +37,11 @@ const ChatButton = (props) => {
       </PopupButton>
     </ButtonContainer>
   );
-}
+};
 
 ChatButton.propTypes = {
   handleChatListProvider: Proptypes.func.isRequired,
-  iconClass: Proptypes.string.isRequired
+  iconClass: Proptypes.string.isRequired,
 };
 
 export default ChatButton;

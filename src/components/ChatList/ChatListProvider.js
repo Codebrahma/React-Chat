@@ -6,9 +6,9 @@ import ChatList from './ChatList';
 import ChatListSearch from './ChatListSearch';
 
 const ThemedProvider = styled.div`
-  background: ${props => (props.background ? props.background : 'rgb(231, 239, 243)')};
-  box-shadow: ${props => (props.boxShadow ? props.boxShadow : '2px 3px 7px 2px rgba(0, 0, 0, 0.5)')};
-  width: ${props => (props.width ? props.width : 200)};
+  background: ${({ background }) => background || 'rgb(231, 239, 243)'};
+  box-shadow: ${({ boxShadow }) => boxShadow || '2px 3px 7px 2px rgba(0, 0, 0, 0.5)'};
+  width: ${({ width }) => (width || 200)};
 `;
 
 class ChatListProvider extends Component {
