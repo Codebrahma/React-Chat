@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { themr } from 'react-css-themr';
-import defaultTheme from '../../themes/_default_theme.scss';
 
 const ChatWindowHeader = (props) => {
   const { theme, myData, handleCloseClick } = props;
@@ -30,4 +28,4 @@ ChatWindowHeader.propTypes = {
   handleCloseClick: PropTypes.func.isRequired,
 };
 
-export default themr('ThemedChatWindowHeader', defaultTheme, { composeTheme: 'softly' })(ChatWindowHeader);
+export default ChatWindowHeader;

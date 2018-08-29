@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { themr } from 'react-css-themr';
-import defaultTheme from '../../themes/_default_theme.scss';
 
 class ChatWindowBody extends Component {
   componentDidUpdate(nextProps) {
@@ -38,4 +36,4 @@ ChatWindowBody.propTypes = {
   theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
 
-export default themr('ThemedChatWindowBody', defaultTheme, { composeTheme: 'softly' })(ChatWindowBody);
+export default ChatWindowBody;
