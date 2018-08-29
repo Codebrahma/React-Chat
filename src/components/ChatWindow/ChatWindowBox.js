@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropType from 'prop-types';
 import styled from 'styled-components';
-import ChatWindow from './ChatWindow';
+import ChatWindowProvider from './ChatWindowProvider';
 
 const WindowBox = styled.div`
   display: flex;
@@ -61,7 +61,7 @@ class ChatWindowBox extends Component {
     return (
       <WindowBox>
         {self && (
-        <ChatWindow
+        <ChatWindowProvider
           handleMessages={this.handleMessages}
           myData={myData}
           userData={userData.find(user => user.id === userId)}
@@ -70,7 +70,7 @@ class ChatWindowBox extends Component {
         />
         )}
         {other && (
-        <ChatWindow
+        <ChatWindowProvider
           handleMessages={this.handleMessages}
           userData={myData}
           myData={userData.find(user => user.id === userId)}

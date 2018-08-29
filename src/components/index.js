@@ -4,7 +4,6 @@ export { default as ChatListHeader } from './ChatList/ChatListHeader';
 export { default as ChatList } from './ChatList/ChatList';
 export { default as ChatListSearch } from './ChatList/ChatListSearch';
 export { default as ChatProvider } from './ChatList/ChatProvider';
-export { default as ChatWindow } from './ChatWindow/ChatWindow';
 export { default as ChatWindowBox } from './ChatWindow/ChatWindowBox';
 export { default as ChatWindowHeader } from './ChatWindow/ChatWindowHeader';
 export { default as ChatWindowSend } from './ChatWindow/ChatWindowSend';
