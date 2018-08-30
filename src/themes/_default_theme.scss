@@ -4,6 +4,7 @@
     background: $chat-bg;
     box-shadow: 2px 3px 7px 2px rgba(0, 0, 0, 0.5);
     width: 220px;
+    margin-left: 1%;
 }
 
 :local(.header) {
@@ -87,14 +88,13 @@
 }
 
 // Chat window styles.
-:local(.chatwindowbox) {
-    display: flex;
-    width: 50vw;
-    position: fixed;
-    left: 0.5em;
-    bottom: 0.5em;
-    z-index: 1000;
-    justify-content: space-between;
+
+:local(.windowprovider) {
+    width: 220px;
+    bottom: 0px;
+    position: relative;
+    float: right;
+    margin-left: 1%;
 }
 
 :local(.windowHeader) {

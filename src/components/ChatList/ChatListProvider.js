@@ -5,12 +5,6 @@ import ChatList from './ChatList';
 import ChatButton from './ChatListButton';
 import defaultTheme from '../../themes/_default_theme.scss';
 
-const containerstyle = {
-  position: 'fixed',
-  bottom: '0.5em',
-  right: '0.5em',
-};
-
 class ChatProvider extends Component {
   constructor(props) {
     super(props);
@@ -49,11 +43,7 @@ class ChatProvider extends Component {
         </div>
       );
       const ChatListDisplay = noButton ? ChatListWOButton : ChatListWButton;
-      return (
-        <div style={containerstyle}>
-          <ChatListDisplay />
-        </div>
-      );
+      return <ChatListDisplay />;
     }
 }
 

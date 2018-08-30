@@ -64,8 +64,7 @@
     .demo-chat-window-box {
         display: flex;
         width: 50vw;
-        position: fixed;
-        left: 0.5em;
+        position: absolute;
         bottom: 0.5em;
         z-index: 1000;
         justify-content: space-between;

@@ -11,13 +11,34 @@ class ChatWindowProvider extends Component {
     super(props);
     this.state = {
       inputMessage: '',
+      messages: [],
     };
   }
 
+  handleMessages = ({ userId, message }) => {
+    this.setState(prevState => ({
+      messages: [...prevState.messages, { userId, message }],
+    }));
+  };
+
+
   render() {
-    const { theme, children, userData } = this.props;
-    const { inputMessage } = this.state;
+    const {
+      theme,
+      children,
+      userData,
+      myData,
+      handleCloseClick,
+      customHeader,
+      customInput,
+      customChatWindow,
+    } = this.props;
+    const { inputMessage, messages } = this.state;
     let CustomItems;
+
+    const CustomHeader = customHeader;
+    const CustomInput = customInput;
+    const CustomChatWindow = customChatWindow;
 
     if (children) {
       CustomItems = Array.isArray(children)
@@ -25,17 +46,25 @@ class ChatWindowProvider extends Component {
         : React.cloneElement(children, { ...this.props });
     }
     return (
-      <div className={theme.provider}>
+      <div className={theme.windowprovider}>
         {children ? (
           <CustomItems />
         ) : (
           <div>
-            <this.props.customHeader userData={userData} {...this.props} />
-            <this.props.customChatWindow userData={userData} {...this.props} />
-            <this.props.customInput
+            <CustomHeader
+              userData={userData}
+              handleCloseClick={handleCloseClick}
+            />
+            <CustomChatWindow
+              userData={userData}
+              messages={messages}
+              myData={myData}
+            />
+            <CustomInput
               onSend={this.onSend}
               inputValue={inputMessage}
-              {...this.props}
+              handleMessages={this.handleMessages}
+              myData={myData}
             />
           </div>
         )}
@@ -49,7 +78,9 @@ ChatWindowProvider.propTypes = {
   customChatWindow: PropTypes.func,
   customInput: PropTypes.func,
   userData: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
+  myData: PropTypes.oneOfType([PropTypes.object]).isRequired,
   theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  handleCloseClick: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
