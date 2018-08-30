@@ -4,7 +4,7 @@
     background: $chat-bg;
     box-shadow: 2px 3px 7px 2px rgba(0, 0, 0, 0.5);
     width: 220px;
-    margin-left: 1%;
+    margin-left: 0.1em;
 }
 
 :local(.header) {
@@ -20,7 +20,7 @@
     margin: 5px 0;
     padding: 0 20px;
     overflow-y: scroll;
-    height: 40vh;
+    height: 42vh;
     color: $text-color;
 }
 
@@ -94,7 +94,7 @@
     bottom: 0px;
     position: relative;
     float: right;
-    margin-left: 1%;
+    margin-left: 0.1em;
 }
 
 :local(.windowHeader) {
@@ -103,14 +103,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 0.9em;
     color: $chat-head-text;
     border-radius: 5px 5px 0 0;
 }
 
 :local(.chatWindowAvatar) {
     border-radius: 50%;
-    max-height: 35px;
-    max-width: 35px;
+    max-height: 30px;
+    max-width: 30px;
     margin-right: 20px;
 }
 
@@ -127,7 +128,6 @@
     height: 40vh;
     width: 220px;
     background: 'blue';
-    padding: 5px 10px;
     overflow-y: scroll;
     .animated {
         animation-duration: 0.1s;

@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import Proptypes from 'prop-types';
+import { themr } from 'react-css-themr';
 import ChatListProvider from '../ChatList/ChatListProvider';
 import theme from '../../themes/_theme_two.scss';
+import defaultTheme from '../../themes/_default_theme.scss';
 import ChatWindowProvider from '../ChatWindow/ChatWindowProvider';
+
+const WINDOW_LIMIT = 2;
 
 class ChatProvider extends Component {
   constructor(props) {
@@ -14,7 +18,7 @@ class ChatProvider extends Component {
 
   updateWindow = (chatId) => {
     this.setState(({ chatUserId }) => {
-      if ([...new Set([...chatUserId, chatId])].length === 4) {
+      if ([...new Set([...chatUserId, chatId])].length === WINDOW_LIMIT + 1) {
         return {
           chatUserId: [...chatUserId.splice(1), chatId],
         };
@@ -26,9 +30,16 @@ class ChatProvider extends Component {
   };
 
   handleChatBoxClose = (id) => {
-    this.setState(({ chatUserId }) => ({
-      chatUserId: chatUserId.filter(userid => userid !== id),
-    }));
+    const { onWindowClose } = this.props;
+    onWindowClose({
+      close: (flag) => {
+        if (flag) {
+          this.setState(({ chatUserId }) => ({
+            chatUserId: chatUserId.filter(userid => userid !== id),
+          }));
+        }
+      },
+    });
   };
 
   render() {
@@ -70,6 +81,11 @@ class ChatProvider extends Component {
 
 ChatProvider.propTypes = {
   userData: Proptypes.arrayOf(Proptypes.object).isRequired,
+  onWindowClose: Proptypes.func,
 };
 
-export default ChatProvider;
+ChatProvider.defaultProps = {
+  onWindowClose: ({ close }) => { close(true); },
+};
+
+export default themr('ThemedChatProvider', defaultTheme, { composeTheme: 'softly' })(ChatProvider);
