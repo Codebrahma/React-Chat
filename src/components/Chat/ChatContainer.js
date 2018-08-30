@@ -13,7 +13,7 @@ class Chat extends Component {
 
   updateWindow = (chatUserId) => {
     const { handleItemCallback } = this.props;
-    const tobeUpdated = handleItemCallback();
+    const tobeUpdated = handleItemCallback(chatUserId);
     if (tobeUpdated) {
       this.setState({
         chatUserId,

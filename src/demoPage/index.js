@@ -6,8 +6,8 @@ import { Chat } from '../components';
 import './demopageStyle.scss';
 
 //  Test function for callback which the user needs to pass as props
-function testCallback() {
-  console.log('called chatItem callback handler');
+function testCallback(id) {
+  console.log(id, 'called chatItem callback handler');
   return true;
 }
 
