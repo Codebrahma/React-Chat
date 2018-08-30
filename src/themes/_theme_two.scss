@@ -17,7 +17,7 @@
 
 :local(.provider) {
     background: $chat-bg;
-    width: 300px;
+    width: 220px;
     box-shadow: 2px 3px 7px 2px rgba(0, 0, 0, 0.5);
     border-radius: 5px 5px 0 0;
 }
@@ -112,7 +112,7 @@
 }
 
 :local(.chatWindowBody) {
-    height: 50vh;
+    height: 40vh;
     padding: 5px 10px;
     overflow-y: scroll;
     background-color: #ffffff;

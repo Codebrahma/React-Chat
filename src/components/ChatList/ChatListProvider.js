@@ -1,90 +1,70 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { themr } from 'react-css-themr';
-import ChatListHeader from './ChatListHeader';
 import ChatList from './ChatList';
-import ChatListSearch from './ChatListSearch';
+import ChatButton from './ChatListButton';
 import defaultTheme from '../../themes/_default_theme.scss';
 
-class ChatListProvider extends Component {
+const containerstyle = {
+  position: 'fixed',
+  bottom: '0.5em',
+  right: '0.5em',
+};
+
+class ChatProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchedFor: '',
+      open: false,
     };
   }
 
-  defaultSearchChange = (value) => {
-    this.setState({
-      searchedFor: value,
-    });
-  }
-
-  render() {
-    const {
-      theme, children, userData, handleSearchChange,
-    } = this.props;
-
-    let CustomItems;
-    if (children) {
-      CustomItems = (Array.isArray(children)
-        ? children.map(
-          child => React.cloneElement(
-            child,
-            { ...this.props },
-          ),
-        ) : React.cloneElement(
-          children,
-          { ...this.props },
-        )
-      );
+    handleChatProvider = () => {
+      this.setState(prevState => ({
+        open: !prevState.open,
+      }));
     }
 
-    const { searchedFor } = this.state;
-    return (
-      <div className={theme.provider}>
-        {
-          children
-            ? <CustomItems /> : (
-              <div>
-                <this.props.customHeader
-                  userData={userData}
-                  {...this.props}
-                />
-                <this.props.customList
-                  userData={userData}
-                  searchedFor={searchedFor}
-                  {...this.props}
-                />
-                <this.props.customSearch
-                  handleSearchChange={
-                  handleSearchChange || this.defaultSearchChange
+    render() {
+      const { userData, updateChatWindow, noButton } = this.props;
+      const { open } = this.state;
+      const ChatListWOButton = () => (
+        <ChatList
+          userData={userData}
+          handleChatItemClick={id => updateChatWindow(id)}
+        />
+      );
+      const ChatListWButton = () => (
+        <div>
+          {
+                    open
+                    && (
+                    <ChatList
+                      userData={userData}
+                      handleChatItemClick={id => updateChatWindow(id)}
+                    />
+                    )
                 }
-                />
-              </div>
-            )
-        }
-      </div>
-    );
-  }
+          <ChatButton iconClass={open ? 'fas fa-times' : 'far fa-comment'} handleChatListProvider={this.handleChatProvider} />
+        </div>
+      );
+      const ChatListDisplay = noButton ? ChatListWOButton : ChatListWButton;
+      return (
+        <div style={containerstyle}>
+          <ChatListDisplay />
+        </div>
+      );
+    }
 }
 
-ChatListProvider.propTypes = {
-  customHeader: PropTypes.func,
-  customList: PropTypes.func,
-  customSearch: PropTypes.func,
+ChatProvider.propTypes = {
+  noButton: PropTypes.bool,
   userData: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
-  handleSearchChange: PropTypes.func,
-  theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  updateChatWindow: PropTypes.func.isRequired,
 };
 
-ChatListProvider.defaultProps = {
-  customHeader: ChatListHeader,
-  customList: ChatList,
-  customSearch: ChatListSearch,
-  handleSearchChange: null,
-  children: null,
+ChatProvider.defaultProps = {
+  noButton: false,
 };
 
-export default themr('ThemedChatListProvider', defaultTheme, { composeTheme: 'softly' })(ChatListProvider);
+export default themr('ThemedChatProvider', defaultTheme, { composeTheme: 'softly' })(ChatProvider);

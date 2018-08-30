@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import Proptypes from 'prop-types';
-import ChatProvider from '../ChatList/ChatProvider';
+import ChatListProvider from '../ChatList/ChatListProvider';
 import ChatWindowBox from '../ChatWindow/ChatWindowBox';
+import theme from '../../themes/_theme_two.scss';
 
-class Chat extends Component {
+class ChatProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      chatUserId: '',
+      chatUserId: [],
     };
   }
 
-  updateWindow = (chatUserId) => {
-    this.setState({
-      chatUserId,
-    });
+  updateWindow = (chatId) => {
+    this.setState(({ chatUserId }) => ({
+      chatUserId: [...chatUserId, chatId],
+    }));
   };
 
   render() {
@@ -22,18 +23,19 @@ class Chat extends Component {
     const { chatUserId } = this.state;
     return (
       <div>
-        <ChatProvider
+        <ChatListProvider
           updateChatWindow={this.updateWindow}
           userData={userData}
+          theme={theme}
         />
-        {chatUserId && <ChatWindowBox userId={chatUserId} {...this.props} />}
+        {chatUserId.map(chatId => <ChatWindowBox userId={chatId} {...this.props} />)}
       </div>
     );
   }
 }
 
-Chat.propTypes = {
+ChatProvider.propTypes = {
   userData: Proptypes.arrayOf(Proptypes.object).isRequired,
 };
 
-export default Chat;
+export default ChatProvider;

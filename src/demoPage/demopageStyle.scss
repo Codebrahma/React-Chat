@@ -69,14 +69,11 @@
         bottom: 0.5em;
         z-index: 1000;
         justify-content: space-between;
-        .demo-chat-window {
-            width: 49%;
             .demo-chat-window-header {
                 height: 40px;
                 background-color: blueviolet;
                 color: white;
             }
-        }
     }
     .demo-chat-list {
         position: fixed;
