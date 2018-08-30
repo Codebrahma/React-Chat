@@ -14,9 +14,20 @@ class DemoPage extends Component {
     };
   }
 
+
   componentDidUpdate() {
     const { close, closeWindow } = this.state;
-    close(closeWindow);
+    if (closeWindow) {
+      close(closeWindow);
+      this.resetCloseState();
+    }
+  }
+
+  resetCloseState = () => {
+    this.setState({
+      close: null,
+      closeWindow: false,
+    });
   }
 
   handleClose = ({ close }) => {
@@ -24,7 +35,9 @@ class DemoPage extends Component {
     this.setState({
       close,
     });
-    setTimeout(() => this.setState({ closeWindow: true }), 5000);
+    setTimeout(() => this.setState({
+      closeWindow: true,
+    }), 5000);
   };
 
   render() {
