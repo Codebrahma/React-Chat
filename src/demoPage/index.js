@@ -5,6 +5,12 @@ import { Chat } from '../components';
 
 import './demopageStyle.scss';
 
+//  Test function for callback which the user needs to pass as props
+function testCallback() {
+  console.log('called chatItem callback handler');
+  return true;
+}
+
 const DemoPage = props => (
   <div className="demo-home">
     <DemoPageNavbar />
@@ -19,7 +25,7 @@ A reusable React Chat App module.
         </p>
       </div>
     </div>
-    <Chat {...props} />
+    <Chat handleItemCallback={testCallback} {...props} />
   </div>
 );
 
