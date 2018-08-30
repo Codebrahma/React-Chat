@@ -90,6 +90,7 @@
 // Chat window styles.
 
 :local(.windowprovider) {
+    background: $chat-bg;
     width: 220px;
     bottom: 0px;
     position: relative;

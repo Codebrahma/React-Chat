@@ -20,12 +20,15 @@ class ChatProvider extends Component {
     }
 
     render() {
-      const { userData, updateChatWindow, noButton } = this.props;
+      const {
+        userData, updateChatWindow, noButton, theme,
+      } = this.props;
       const { open } = this.state;
       const ChatListWOButton = () => (
         <ChatList
           userData={userData}
           handleChatItemClick={id => updateChatWindow(id)}
+          theme={theme}
         />
       );
       const ChatListWButton = () => (
@@ -51,6 +54,7 @@ ChatProvider.propTypes = {
   noButton: PropTypes.bool,
   userData: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
   updateChatWindow: PropTypes.func.isRequired,
+  theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
 
 ChatProvider.defaultProps = {

@@ -14,7 +14,6 @@ class DemoPage extends Component {
     };
   }
 
-
   componentDidUpdate() {
     const { close, closeWindow } = this.state;
     if (closeWindow) {

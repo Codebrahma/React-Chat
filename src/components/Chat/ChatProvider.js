@@ -60,7 +60,7 @@ class ChatProvider extends Component {
             key={chatId}
           >
             <ChatWindowProvider
-              theme={theme}
+              // theme={theme}
               userData={userData.filter(user => chatId === user.id)[0]}
               myData={myData}
               handleCloseClick={this.handleChatBoxClose}

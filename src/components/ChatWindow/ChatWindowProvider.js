@@ -54,17 +54,20 @@ class ChatWindowProvider extends Component {
             <CustomHeader
               userData={userData}
               handleCloseClick={handleCloseClick}
+              theme={theme}
             />
             <CustomChatWindow
               userData={userData}
               messages={messages}
               myData={myData}
+              theme={theme}
             />
             <CustomInput
               onSend={this.onSend}
               inputValue={inputMessage}
               handleMessages={this.handleMessages}
               myData={myData}
+              theme={theme}
             />
           </div>
         )}
