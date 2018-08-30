@@ -12,9 +12,13 @@ class Chat extends Component {
   }
 
   updateWindow = (chatUserId) => {
-    this.setState({
-      chatUserId,
-    });
+    const { handleItemCallback } = this.props;
+    const tobeUpdated = handleItemCallback(chatUserId);
+    if (tobeUpdated) {
+      this.setState({
+        chatUserId,
+      });
+    }
   };
 
   render() {
@@ -34,6 +38,11 @@ class Chat extends Component {
 
 Chat.propTypes = {
   userData: Proptypes.arrayOf(Proptypes.object).isRequired,
+  handleItemCallback: Proptypes.func,
+};
+
+Chat.defaultProps = {
+  handleItemCallback: () => true,
 };
 
 export default Chat;
