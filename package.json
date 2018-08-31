@@ -55,6 +55,7 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "babel-eslint": "^8.2.3",
     "classnames": "^2.2.6",
     "emoji-mart": "^2.7.0",

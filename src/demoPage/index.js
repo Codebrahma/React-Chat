@@ -37,7 +37,7 @@ class DemoPage extends Component {
     });
     setTimeout(() => this.setState({
       closeWindow: true,
-    }), 5000);
+    }), 2000);
   };
 
   render() {
