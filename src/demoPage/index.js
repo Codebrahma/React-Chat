@@ -17,14 +17,15 @@ class DemoPage extends Component {
   componentDidUpdate() {
     const { close, closeWindow } = this.state;
     if (closeWindow) {
-      close(closeWindow);
-      this.resetCloseState();
+      (async () => {
+        this.resetCloseState();
+        await close(closeWindow);
+      })();
     }
   }
 
   resetCloseState = () => {
     this.setState({
-      close: null,
       closeWindow: false,
     });
   }

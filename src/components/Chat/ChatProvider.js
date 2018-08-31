@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Proptypes from 'prop-types';
 import { themr } from 'react-css-themr';
 import ChatListProvider from '../ChatList/ChatListProvider';
-import theme from '../../themes/_theme_two.scss';
+import theme from '../../themes/_theme_three.scss';
 import defaultTheme from '../../themes/_default_theme.scss';
 import ChatWindowProvider from '../ChatWindow/ChatWindowProvider';
 
@@ -60,7 +60,7 @@ class ChatProvider extends Component {
             key={chatId}
           >
             <ChatWindowProvider
-              // theme={theme}
+              theme={theme}
               userData={userData.filter(user => chatId === user.id)[0]}
               myData={myData}
               handleCloseClick={this.handleChatBoxClose}
