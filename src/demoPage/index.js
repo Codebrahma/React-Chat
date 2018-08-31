@@ -5,7 +5,6 @@ import { Chat } from '../components';
 
 import './demopageStyle.scss';
 
-
 class DemoPage extends Component {
   constructor(props) {
     super(props);
@@ -17,10 +16,8 @@ class DemoPage extends Component {
   componentDidUpdate() {
     const { close, closeWindow } = this.state;
     if (closeWindow) {
-      (async () => {
-        this.resetCloseState();
-        await close(closeWindow);
-      })();
+      this.resetCloseState();
+      close(closeWindow);
     }
   }
 
@@ -28,16 +25,19 @@ class DemoPage extends Component {
     this.setState({
       closeWindow: false,
     });
-  }
+  };
 
   handleClose = ({ close }) => {
     console.log('redux actions dispatch or any conditional task..');
     this.setState({
       close,
     });
-    setTimeout(() => this.setState({
-      closeWindow: true,
-    }), 2000);
+    setTimeout(
+      () => this.setState({
+        closeWindow: true,
+      }),
+      2000,
+    );
   };
 
   render() {
@@ -50,8 +50,8 @@ class DemoPage extends Component {
 A reusable React Chat App module.
             </h2>
             <p>
-          Click on the chat icon at the bottom right of the page and select any
-          user to start a demo chat!
+              Click on the chat icon at the bottom right of the page and select
+              any user to start a demo chat!
             </p>
           </div>
         </div>
@@ -60,6 +60,5 @@ A reusable React Chat App module.
     );
   }
 }
-
 
 export default DemoPage;
