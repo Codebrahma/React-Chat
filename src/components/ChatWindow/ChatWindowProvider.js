@@ -27,7 +27,6 @@ class ChatWindowProvider extends Component {
       theme,
       children,
       userData,
-      myData,
       handleCloseClick,
       customHeader,
       customInput,
@@ -59,14 +58,13 @@ class ChatWindowProvider extends Component {
             <CustomChatWindow
               userData={userData}
               messages={messages}
-              myData={myData}
               theme={theme}
             />
             <CustomInput
               onSend={this.onSend}
               inputValue={inputMessage}
               handleMessages={this.handleMessages}
-              myData={myData}
+              userData={userData}
               theme={theme}
             />
           </div>
@@ -81,7 +79,6 @@ ChatWindowProvider.propTypes = {
   customChatWindow: PropTypes.func,
   customInput: PropTypes.func,
   userData: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
-  myData: PropTypes.oneOfType([PropTypes.object]).isRequired,
   theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
   handleCloseClick: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([
