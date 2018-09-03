@@ -26,7 +26,7 @@ const ChatListItem = (props) => {
   return (
     <div id={id} className={theme.useritem} onClick={() => handleChatItemClick(id)}>
       <img
-        src={avatar || defaultAvatar}
+        src={avatar}
         className={theme.useravatar}
         alt={name.slice(0, 1).toUpperCase()}
       />
@@ -42,12 +42,16 @@ const ChatListItem = (props) => {
 
 ChatListItem.propTypes = {
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  avatar: PropTypes.string.isRequired,
+  avatar: PropTypes.string,
   name: PropTypes.string.isRequired,
   onlineStatus: PropTypes.string.isRequired,
   handleChatItemClick: PropTypes.func.isRequired,
   theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
   lastSeen: PropTypes.oneOfType([PropTypes.object]).isRequired,
+};
+
+ChatListItem.defaultProps = {
+  avatar: defaultAvatar,
 };
 
 export default themr('ThemedChatListItem', defaultTheme, { composeTheme: 'softly' })(ChatListItem);
