@@ -1,16 +1,12 @@
 {
   "name": "react-chat-cb",
   "sideEffects": false,
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "react chat",
   "main": "/lib/index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production --config webpack.prod.js",
-    "lint": "./node_modules/.bin/eslint ./ --ext .jsx --ext .js",
-    "test": "mocha --require babel-core/register --require test/testSetup.js 'test/*.test.js'",
-    "storybook": "start-storybook -p 9001 -c .storybook",
-    "build-storybook": "build-storybook"
+    "build": "webpack --mode production --config webpack.config.js",
+    "lint": "./node_modules/.bin/eslint ./ --ext .jsx --ext .js"
   },
   "keywords": [],
   "author": "",
