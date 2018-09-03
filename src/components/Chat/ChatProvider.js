@@ -80,7 +80,7 @@ class ChatProvider extends Component {
 ChatProvider.propTypes = {
   userData: Proptypes.arrayOf(Proptypes.object).isRequired,
   onWindowClose: Proptypes.func,
-  theme: Proptypes.oneOfType(Proptypes.object).isRequired,
+  theme: Proptypes.oneOfType([Proptypes.object]).isRequired,
 };
 
 ChatProvider.defaultProps = {
