@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { themr } from 'react-css-themr';
 import defaultTheme from '../../themes/_default_theme.scss';
+import defaultAvatar from '../../images/user.jpeg';
 
 const ChatWindowHeader = (props) => {
   const { theme, chatUserId, handleCloseClick } = props;
@@ -10,7 +11,7 @@ const ChatWindowHeader = (props) => {
   return (
     <div className={theme.windowHeader}>
       <img
-        src={chatUserId.avatar}
+        src={chatUserId.avatar || defaultAvatar}
         alt={chatUserId.name.slice(0, 1).toUpperCase()}
         className={theme.chatWindowAvatar}
       />
