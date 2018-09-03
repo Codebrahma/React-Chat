@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Proptypes from 'prop-types';
 import { themr } from 'react-css-themr';
 import ChatListProvider from '../ChatList/ChatListProvider';
-import theme from '../../themes/_theme_three.scss';
 import defaultTheme from '../../themes/_default_theme.scss';
 import ChatWindowProvider from '../ChatWindow/ChatWindowProvider';
 
@@ -44,7 +43,7 @@ class ChatProvider extends Component {
 
   render() {
     const { chatUserId } = this.state;
-    const { userData } = this.props;
+    const { userData, theme } = this.props;
     return (
       <div
         style={{
@@ -81,6 +80,7 @@ class ChatProvider extends Component {
 ChatProvider.propTypes = {
   userData: Proptypes.arrayOf(Proptypes.object).isRequired,
   onWindowClose: Proptypes.func,
+  theme: Proptypes.oneOfType(Proptypes.object).isRequired,
 };
 
 ChatProvider.defaultProps = {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DemoPageNavbar from './DemoPageNavbar';
 import './resources/animate.scss';
+import theme from '../themes/_theme_three.scss';
 import { Chat } from '../components';
 
 import './demopageStyle.scss';
@@ -55,7 +56,7 @@ A reusable React Chat App module.
             </p>
           </div>
         </div>
-        <Chat onWindowClose={this.handleClose} {...this.props} />
+        <Chat onWindowClose={this.handleClose} theme={theme} {...this.props} />
       </div>
     );
   }
