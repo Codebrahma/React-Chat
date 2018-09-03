@@ -1,5 +1,6 @@
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const BundleAnalyser = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path');
 
@@ -11,6 +12,9 @@ module.exports = {
     filename: 'index.js',
     libraryTarget: 'commonjs2',
   },
+  plugins: [
+      new BundleAnalyser(),
+  ],
   module: {
     rules: [
       {
@@ -46,11 +50,11 @@ module.exports = {
       },
       {
         test: /.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
-        use: 'file-loader',
+        use: 'url-loader',
       },
     ],
   },
-  stats: {
+  stats: {    
     colors: true,
     hash: true,
     timings: true,
