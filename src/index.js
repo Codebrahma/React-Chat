@@ -1,12 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { userData } from './data';
-import DemoPage from './demoPage';
-
-const Index = () => (
-  <div>
-    <DemoPage userData={userData} />
-  </div>
-);
-
-ReactDOM.render(<Index />, document.getElementById('index'));
+export { default as ChatListProvider } from './components/ChatList/ChatListProvider';
+export { default as ChatListItem } from './components/ChatList/ChatListItem';
+export { default as ChatListHeader } from './components/ChatList/ChatListHeader';
+export { default as ChatList } from './components/ChatList/ChatList';
+export { default as ChatListSearch } from './components/ChatList/ChatListSearch';
+export { default as ChatProvider } from './components/ChatList/ChatListProvider';
+export { default as ChatWindowHeader } from './components/ChatWindow/ChatWindowHeader';
+export { default as ChatWindowSend } from './components/ChatWindow/ChatWindowSend';
+export { default as ChatWindowBody } from './components/ChatWindow/ChatWindowBody';
+export { default as ChatWindowProvider } from './components/ChatWindow/ChatWindowProvider';
+export { default as Chat } from './components/Chat/ChatProvider';

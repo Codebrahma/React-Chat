@@ -78,13 +78,14 @@ class ChatProvider extends Component {
 }
 
 ChatProvider.propTypes = {
-  userData: Proptypes.arrayOf(Proptypes.object).isRequired,
+  userData: Proptypes.arrayOf(Proptypes.object),
   onWindowClose: Proptypes.func,
   theme: Proptypes.oneOfType([Proptypes.object]).isRequired,
 };
 
 ChatProvider.defaultProps = {
   onWindowClose: ({ close }) => { close(true); },
+  userData: [],
 };
 
 export default themr('ThemedChatProvider', defaultTheme, { composeTheme: 'softly' })(ChatProvider);

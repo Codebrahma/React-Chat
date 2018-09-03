@@ -3,10 +3,8 @@
   "sideEffects": false,
   "version": "1.0.0",
   "description": "react chat",
-  "main": "index.js",
+  "main": "/lib/index.js",
   "scripts": {
-    "postinstall": "node .githooks/",
-    "prestart": "node .githooks/",
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production --config webpack.prod.js",
     "lint": "./node_modules/.bin/eslint ./ --ext .jsx --ext .js",

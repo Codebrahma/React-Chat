@@ -52,13 +52,14 @@ class ChatProvider extends Component {
 
 ChatProvider.propTypes = {
   noButton: PropTypes.bool,
-  userData: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
+  userData: PropTypes.arrayOf(PropTypes.object),
   updateChatWindow: PropTypes.func.isRequired,
   theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
 
 ChatProvider.defaultProps = {
   noButton: false,
+  userData: [],
 };
 
 export default themr('ThemedChatProvider', defaultTheme, { composeTheme: 'softly' })(ChatProvider);

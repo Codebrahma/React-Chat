@@ -73,13 +73,14 @@ ChatList.propTypes = {
   customHeader: PropTypes.func,
   customList: PropTypes.func,
   customSearch: PropTypes.func,
-  userData: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
+  userData: PropTypes.arrayOf(PropTypes.object),
   handleSearchChange: PropTypes.func,
   theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
 ChatList.defaultProps = {
+  userData: [],
   customHeader: ChatListHeader,
   customList: ListProvider,
   customSearch: ChatListSearch,

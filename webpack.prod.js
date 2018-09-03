@@ -2,11 +2,18 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const path = require('path');
 
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   mode: 'production',
+  entry: './src/index.js',
+  output: {
+    path: path.resolve('lib'),
+    filename: 'index.js',
+    libraryTarget: 'commonjs2',
+  },
   stats: {
     colors: true,
     hash: true,

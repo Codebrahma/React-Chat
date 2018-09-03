@@ -6,8 +6,6 @@ import defaultAvatar from '../../images/user.jpeg';
 
 const ChatWindowHeader = (props) => {
   const { theme, chatUserId, handleCloseClick } = props;
-  // const avatar = { myData };
-  // const userAvatar = require(avatar);
   return (
     <div className={theme.windowHeader}>
       <img

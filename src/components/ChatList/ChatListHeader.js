@@ -17,8 +17,12 @@ Active Users (
 };
 
 ChatListHeader.propTypes = {
-  userData: PropTypes.oneOfType([PropTypes.array]).isRequired,
+  userData: PropTypes.arrayOf([PropTypes.object]),
   theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
+};
+
+ChatListHeader.defaultProps = {
+  userData: [],
 };
 
 export default themr('ThemedChatListHeader', defaultTheme, { composeTheme: 'softly' })(ChatListHeader);

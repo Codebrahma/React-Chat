@@ -41,7 +41,7 @@ const ChatList = (props) => {
 };
 
 ChatList.propTypes = {
-  userData: PropTypes.oneOfType([PropTypes.array]).isRequired,
+  userData: PropTypes.arrayOf([PropTypes.object]),
   filteredUserData: PropTypes.arrayOf(PropTypes.object),
   searchedFor: PropTypes.string,
   theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
@@ -49,6 +49,7 @@ ChatList.propTypes = {
 };
 
 ChatList.defaultProps = {
+  userData: [],
   customChatListItem: ChatListItem,
   filteredUserData: null,
   searchedFor: '',
