@@ -2,22 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { themr } from 'react-css-themr';
 import defaultTheme from '../../themes/_default_theme.scss';
+import defaultAvatar from '../../images/user.jpeg';
 
 const ChatWindowHeader = (props) => {
-  const { theme, myData, handleCloseClick } = props;
+  const { theme, chatUserId, handleCloseClick } = props;
   // const avatar = { myData };
   // const userAvatar = require(avatar);
   return (
     <div className={theme.windowHeader}>
       <img
-        src={myData.avatar}
-        alt={myData.name.slice(0, 1).toUpperCase()}
+        src={chatUserId.avatar || defaultAvatar}
+        alt={chatUserId.name.slice(0, 1).toUpperCase()}
         className={theme.chatWindowAvatar}
       />
       <span className={theme.chatUserName}>
-        {myData.name}
+        {chatUserId.name}
       </span>
-      <div onClick={handleCloseClick}>
+      <div onClick={() => handleCloseClick(chatUserId.id)}>
         <i className="fas fa-times" />
       </div>
     </div>
@@ -25,7 +26,7 @@ const ChatWindowHeader = (props) => {
 };
 
 ChatWindowHeader.propTypes = {
-  myData: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  chatUserId: PropTypes.oneOfType([PropTypes.object]).isRequired,
   theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
   handleCloseClick: PropTypes.func.isRequired,
 };

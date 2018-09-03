@@ -1,57 +1,90 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { themr } from 'react-css-themr';
-import ChatListItem from './ChatListItem';
+import ChatListHeader from './ChatListHeader';
+import ListProvider from './ListProvider';
+import ChatListSearch from './ChatListSearch';
 import defaultTheme from '../../themes/_default_theme.scss';
 
-const ChatList = (props) => {
-  const {
-    theme, filteredUserData, userData, searchedFor, customChatListItem,
-  } = props;
-  const filteredUsers = filteredUserData || userData.filter(
-    user => user.name.toLowerCase()
-      .includes(searchedFor.toLowerCase()),
-  );
+class ChatList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchedFor: '',
+    };
+  }
 
-  const ChatItem = customChatListItem;
-  return (
-    <div className={theme.userlist}>
-      {
-        filteredUsers.length === 0
-          ? (
-            <span>
-              No User Found
-            </span>
-          )
-          : filteredUsers.map(item => (
-            <ChatItem
-              key={item.id}
-              id={item.id}
-              avatar={item.avatar}
-              name={item.name}
-              onlineStatus={item.onlineStatus}
-              lastSeen={item.lastSeen}
-              {...props}
-              {...item}
-            />
-          ))
-      }
-    </div>
-  );
-};
+  defaultSearchChange = (value) => {
+    this.setState({
+      searchedFor: value,
+    });
+  }
+
+  render() {
+    const {
+      theme, children, userData, handleSearchChange,
+    } = this.props;
+
+    let CustomItems;
+    if (children) {
+      CustomItems = (Array.isArray(children)
+        ? children.map(
+          child => React.cloneElement(
+            child,
+            { ...this.props },
+          ),
+        ) : React.cloneElement(
+          children,
+          { ...this.props },
+        )
+      );
+    }
+
+    const { searchedFor } = this.state;
+    return (
+      <div className={theme.provider}>
+        {
+          children
+            ? <CustomItems /> : (
+              <div>
+                <this.props.customHeader
+                  userData={userData}
+                  {...this.props}
+                />
+                <this.props.customList
+                  userData={userData}
+                  searchedFor={searchedFor}
+                  {...this.props}
+                />
+                <this.props.customSearch
+                  handleSearchChange={
+                  handleSearchChange || this.defaultSearchChange
+                }
+                />
+              </div>
+            )
+        }
+      </div>
+    );
+  }
+}
 
 ChatList.propTypes = {
-  userData: PropTypes.oneOfType([PropTypes.array]).isRequired,
-  filteredUserData: PropTypes.arrayOf(PropTypes.object),
-  searchedFor: PropTypes.string,
+  customHeader: PropTypes.func,
+  customList: PropTypes.func,
+  customSearch: PropTypes.func,
+  userData: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
+  handleSearchChange: PropTypes.func,
   theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
-  customChatListItem: PropTypes.func,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
 ChatList.defaultProps = {
-  customChatListItem: ChatListItem,
-  filteredUserData: null,
-  searchedFor: '',
+  customHeader: ChatListHeader,
+  customList: ListProvider,
+  customSearch: ChatListSearch,
+  handleSearchChange: null,
+  children: null,
 };
 
 export default themr('ThemedChatList', defaultTheme, { composeTheme: 'softly' })(ChatList);

@@ -61,42 +61,4 @@
         font-family: 'Roboto', sans-serif;
         text-align: center;
     }
-    .demo-chat-window-box {
-        display: flex;
-        width: 50vw;
-        position: fixed;
-        left: 0.5em;
-        bottom: 0.5em;
-        z-index: 1000;
-        justify-content: space-between;
-        .demo-chat-window {
-            width: 49%;
-            .demo-chat-window-header {
-                height: 40px;
-                background-color: blueviolet;
-                color: white;
-            }
-        }
-    }
-    .demo-chat-list {
-        position: fixed;
-        right: 0.5em;
-        margin-bottom: 0.2%;
-        border-radius: 5px;
-        height: auto;
-        width: 300px;
-        bottom: 55px;
-        z-index: 1000;
-        ::-webkit-scrollbar {
-            visibility: hidden;
-        }
-        &:hover {
-            ::-webkit-scrollbar {
-                visibility: visible;
-            }
-        }
-        .demo-chat-provider {
-            border-radius: 5px;
-        }
-    }
 }

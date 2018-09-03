@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:500,700');
 @import '../root/colors.scss';
+
+// Chat list styles
 :local(.header) {
     height: 40px;
     background: $chat-window-head-theme3;
@@ -18,7 +20,7 @@
 }
 
 :local(.provider) {
-    width: 300px;
+    width: 220px;
     background: $chat-bg;
     box-shadow: 2px 3px 7px 2px rgba(0, 0, 0, 0.5);
     border-radius: 5px 5px 0 0;
@@ -27,7 +29,7 @@
 :local(.userlist) {
     background: white;
     overflow-y: scroll;
-    max-height: 60vh;
+    max-height: 44vh;
     &::-webkit-scrollbar {
         display: none;
     }
@@ -48,6 +50,8 @@
 
 :local(.useravatar) {
     border-radius: 50%;
+    max-height: 40px;
+    width: auto;
 }
 
 :local(.username) {
@@ -65,8 +69,10 @@
 }
 
 :local(.offline) {
-    height: 15px;
-    width: 20px;
+    height: auto;
+    width: auto;
+    font-size: 0.7em;
+    color: #a1a1a1;
 }
 
 :local(.searchbox) {
@@ -93,6 +99,16 @@
     }
 }
 
+// Chat window styles
+:local(.windowprovider) {
+    background: $chat-bg;
+    width: 220px;
+    bottom: 0px;
+    position: relative;
+    float: right;
+    margin-left: 0.1em;
+}
+
 :local(.windowHeader) {
     background:  $chat-window-head-theme3;
     padding: 5px 10px;
@@ -111,7 +127,7 @@
 }
 
 :local(.chatWindowBody) {
-    height: 50vh;
+    height: 40vh;
     padding: 5px 10px;
     overflow-y: scroll;
     background-color: #ffffff;

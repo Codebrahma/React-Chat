@@ -1,16 +1,10 @@
 @import '../root/colors.scss';
+// Chat list styles.
 :local(.provider) {
     background: $chat-bg;
     box-shadow: 2px 3px 7px 2px rgba(0, 0, 0, 0.5);
-    width: 300px;
-}
-
-:local(.userlist) {
-    margin: 5px 0;
-    padding: 0 20px;
-    overflow-y: scroll;
-    height: 60vh;
-    color: $text-color;
+    width: 220px;
+    margin-left: 0.1em;
 }
 
 :local(.header) {
@@ -19,32 +13,15 @@
     background: $chat-header;
     color: $chat-head-text;
     padding: 10px 10px;
+    font-size: 0.84em;
 }
 
-:local(.windowHeader) {
-    background: $chat-header;
-    padding: 5px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: $chat-head-text;
-    border-radius: 5px 5px 0 0;
-}
-
-:local(.chatWindowAvatar) {
-    border-radius: 50%;
-    max-height: 40px;
-    max-width: 40px;
-    margin-right: 20px;
-}
-
-:local(.chatUserName) {
-    flex: 2;
-    text-transform: capitalize;
-}
-
-:local(.icon) {
-    padding: 9%;
+:local(.userlist) {
+    margin: 5px 0;
+    padding: 0 20px;
+    overflow-y: scroll;
+    height: 42vh;
+    color: $text-color;
 }
 
 :local(.useritem) {
@@ -53,10 +30,13 @@
     justify-content: space-around;
     margin: 10px 0;
     cursor: pointer;
+    font-size: 0.9em;
 }
 
 :local(.useravatar) {
     border-radius: 50%;
+    max-height: 40px;
+    width: auto;
 }
 
 :local(.username) {
@@ -74,8 +54,8 @@
 }
 
 :local(.offline) {
-    height: 15px;
-    width: 20px;
+    font-size: 0.7em;
+    color: #a0a0a0;
 }
 
 :local(.searchbox) {
@@ -107,9 +87,48 @@
     box-shadow: 2px 4px 9px 3px rgba(0, 0, 0, 0.5);
 }
 
-:local(.chatWindowBody) {
-    height: 50vh;
+// Chat window styles.
+
+:local(.windowprovider) {
+    background: $chat-bg;
+    width: 220px;
+    bottom: 0px;
+    position: relative;
+    float: right;
+    margin-left: 0.1em;
+}
+
+:local(.windowHeader) {
+    background: $chat-header;
     padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: $chat-head-text;
+    border-radius: 5px 5px 0 0;
+}
+
+:local(.chatWindowAvatar) {
+    border-radius: 50%;
+    max-height: 30px;
+    max-width: 30px;
+    margin-right: 20px;
+}
+
+:local(.chatUserName) {
+    flex: 2;
+    text-transform: capitalize;
+}
+
+:local(.icon) {
+    padding: 9%;
+}
+
+:local(.chatWindowBody) {
+    height: 40vh;
+    width: 220px;
+    background: 'blue';
     overflow-y: scroll;
     .animated {
         animation-duration: 0.1s;
@@ -140,6 +159,7 @@
     background: #b8dff0;
     float: right;
 }
+
 :local(.recieved) {
     background: #b8dff0;
     float: left;
@@ -171,7 +191,7 @@
     }
 }
 
-:local(.messageInput){
+:local(.messageInput) {
     font-size: 0.85em;
     border: none;
     outline: none;

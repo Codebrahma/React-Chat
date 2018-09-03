@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { themr } from 'react-css-themr';
 import defaultTheme from '../../themes/_default_theme.scss';
+import defaultAvatar from '../../images/user.jpeg';
 
 const ChatListItem = (props) => {
   const {
@@ -24,7 +25,11 @@ const ChatListItem = (props) => {
 
   return (
     <div id={id} className={theme.useritem} onClick={() => handleChatItemClick(id)}>
-      <img src={avatar} className={theme.useravatar} alt={name.slice(0, 1).toUpperCase()} />
+      <img
+        src={avatar || defaultAvatar}
+        className={theme.useravatar}
+        alt={name.slice(0, 1).toUpperCase()}
+      />
       <span className={theme.username}>
         {name}
       </span>
@@ -37,12 +42,16 @@ const ChatListItem = (props) => {
 
 ChatListItem.propTypes = {
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  avatar: PropTypes.string.isRequired,
+  avatar: PropTypes.string,
   name: PropTypes.string.isRequired,
   onlineStatus: PropTypes.string.isRequired,
   handleChatItemClick: PropTypes.func.isRequired,
   theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
   lastSeen: PropTypes.oneOfType([PropTypes.object]).isRequired,
+};
+
+ChatListItem.defaultProps = {
+  avatar: null,
 };
 
 export default themr('ThemedChatListItem', defaultTheme, { composeTheme: 'softly' })(ChatListItem);

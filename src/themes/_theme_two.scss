@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:500,700');
 @import '../root/colors.scss';
+
+// chat list style
 :local(.header) {
     height: 40px;
     background: $chat-window-head-theme2;
@@ -17,7 +19,7 @@
 
 :local(.provider) {
     background: $chat-bg;
-    width: 300px;
+    width: 220px;
     box-shadow: 2px 3px 7px 2px rgba(0, 0, 0, 0.5);
     border-radius: 5px 5px 0 0;
 }
@@ -25,7 +27,7 @@
 :local(.userlist) {
     background: white;
     overflow-y: scroll;
-    max-height: 60vh;
+    max-height: 42.5vh;
     &::-webkit-scrollbar {
         display: none;
     }
@@ -46,6 +48,8 @@
 
 :local(.useravatar) {
     border-radius: 50%;
+    max-height: 40px;
+    width: auto;
 }
 
 :local(.username) {
@@ -94,6 +98,16 @@
     }
 }
 
+// Chat window styles
+:local(.windowprovider) {
+    background: $chat-bg;
+    width: 220px;
+    bottom: 0px;
+    position: relative;
+    float: right;
+    margin-left: 0.1em;
+}
+
 :local(.windowHeader) {
     background:  $chat-window-head-theme2;
     padding: 5px 10px;
@@ -101,18 +115,19 @@
     align-items: center;
     justify-content: space-between;
     color: $chat-head-text;
+    font-size: 0.9em;
     border-radius: 5px 5px 0 0;
 }
 
 :local(.chatWindowAvatar) {
     border-radius: 50%;
-    max-height: 40px;
-    max-width: 40px;
+    max-height: 30px;
+    max-width: 30px;
     margin-right: 20px;
 }
 
 :local(.chatWindowBody) {
-    height: 50vh;
+    height: 40vh;
     padding: 5px 10px;
     overflow-y: scroll;
     background-color: #ffffff;
@@ -149,6 +164,13 @@
     background: rgba(0, 0, 0, 0.1);
     color: rgba(0,0,0,0.73);
     float: left;
+}
+
+:local(.offline) {
+    height: auto;
+    width: auto;
+    font-size: 0.84em;
+    color: #a1a1a1;
 }
 
 :local(.chatSendInput) {

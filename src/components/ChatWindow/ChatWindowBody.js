@@ -5,10 +5,10 @@ import defaultTheme from '../../themes/_default_theme.scss';
 
 class ChatWindowBody extends Component {
   componentDidUpdate(nextProps) {
-    const { myData } = this.props;
+    const { chatUserId } = this.props;
     const lastMessageIndex = nextProps.messages.length;
-    const messageContainer = document.getElementById(`window-${myData.id}`);
-    const lastMessageElement = document.getElementById(`m-${myData.id}-${lastMessageIndex}`);
+    const messageContainer = document.getElementById(`window-${chatUserId.id}`);
+    const lastMessageElement = document.getElementById(`m-${chatUserId.id}-${lastMessageIndex}`);
 
     if (lastMessageElement !== null) {
       const lastMessageTop = lastMessageElement.offsetTop;
@@ -17,12 +17,14 @@ class ChatWindowBody extends Component {
   }
 
   render() {
-    const { theme, messages, myData } = this.props;
+    const {
+      theme, messages, chatUserId,
+    } = this.props;
     return (
-      <div className={theme.chatWindowBody} id={`window-${myData.id}`}>
+      <div className={theme.chatWindowBody} id={`window-${chatUserId.id}`}>
         {
           messages.map((message, index) => (
-            <div key={`${myData.id}${index + 1}`} id={`m-${myData.id}-${index + 1}`} className={`${myData.id === message.userId ? theme.sent : theme.recieved} ${theme.message} animated zoomIn`}>
+            <div key={`${chatUserId.id}${index + 1}`} id={`m-${chatUserId.id}-${index + 1}`} className={`${chatUserId.id === message.userId ? theme.sent : theme.recieved} ${theme.message} animated zoomIn`}>
               {message.message}
             </div>
           ))
@@ -33,9 +35,9 @@ class ChatWindowBody extends Component {
 }
 
 ChatWindowBody.propTypes = {
-  myData: PropTypes.oneOfType([PropTypes.object]).isRequired,
   messages: PropTypes.arrayOf(PropTypes.object).isRequired,
   theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  chatUserId: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
 
 export default themr('ThemedChatWindowBody', defaultTheme, { composeTheme: 'softly' })(ChatWindowBody);
