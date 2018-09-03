@@ -21,12 +21,11 @@ class ChatWindowProvider extends Component {
     }));
   };
 
-
   render() {
     const {
       theme,
       children,
-      userData,
+      chatUserId,
       handleCloseClick,
       customHeader,
       customInput,
@@ -51,12 +50,12 @@ class ChatWindowProvider extends Component {
         ) : (
           <div>
             <CustomHeader
-              userData={userData}
+              chatUserId={chatUserId}
               handleCloseClick={handleCloseClick}
               theme={theme}
             />
             <CustomChatWindow
-              userData={userData}
+              chatUserId={chatUserId}
               messages={messages}
               theme={theme}
             />
@@ -64,7 +63,7 @@ class ChatWindowProvider extends Component {
               onSend={this.onSend}
               inputValue={inputMessage}
               handleMessages={this.handleMessages}
-              userData={userData}
+              chatUserId={chatUserId}
               theme={theme}
             />
           </div>
@@ -78,7 +77,7 @@ ChatWindowProvider.propTypes = {
   customHeader: PropTypes.func,
   customChatWindow: PropTypes.func,
   customInput: PropTypes.func,
-  userData: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
+  chatUserId: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
   theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
   handleCloseClick: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([

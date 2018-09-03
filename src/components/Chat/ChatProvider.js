@@ -44,7 +44,7 @@ class ChatProvider extends Component {
 
   render() {
     const { chatUserId } = this.state;
-    const { userData, myData } = this.props;
+    const { userData } = this.props;
     return (
       <div
         style={{
@@ -61,8 +61,7 @@ class ChatProvider extends Component {
           >
             <ChatWindowProvider
               theme={theme}
-              userData={userData.filter(user => chatId === user.id)[0]}
-              myData={myData}
+              chatUserId={userData.filter(user => chatId === user.id)[0]}
               handleCloseClick={this.handleChatBoxClose}
             />
           </div>
@@ -82,7 +81,6 @@ class ChatProvider extends Component {
 ChatProvider.propTypes = {
   userData: Proptypes.arrayOf(Proptypes.object).isRequired,
   onWindowClose: Proptypes.func,
-  myData: Proptypes.oneOfType([Proptypes.object]).isRequired,
 };
 
 ChatProvider.defaultProps = {

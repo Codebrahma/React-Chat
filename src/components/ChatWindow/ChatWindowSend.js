@@ -14,10 +14,10 @@ class ChatWindowSend extends Component {
 
   onSend = (e) => {
     const { message } = this.state;
-    const { userData, handleMessages } = this.props;
+    const { chatUserId, handleMessages } = this.props;
     e.preventDefault();
     if (message.trim() !== '') {
-      handleMessages({ message, userId: userData.id });
+      handleMessages({ message, userId: chatUserId.id });
     }
     this.setState(() => ({
       message: '',
@@ -54,7 +54,7 @@ class ChatWindowSend extends Component {
 
 ChatWindowSend.propTypes = {
   handleMessages: PropTypes.func.isRequired,
-  userData: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  chatUserId: PropTypes.oneOfType([PropTypes.object]).isRequired,
   theme: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
 
