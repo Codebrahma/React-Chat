@@ -36,7 +36,7 @@ class DemoPage extends Component {
       () => this.setState({
         closeWindow: true,
       }),
-      5000,
+      2000,
     );
   };
 
