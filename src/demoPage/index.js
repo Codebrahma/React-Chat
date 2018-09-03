@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DemoPageNavbar from './DemoPageNavbar';
-import './resources/animate.scss';
+import './animate.scss';
 import theme from '../themes/_theme_three.scss';
 import { Chat } from '../components';
 

@@ -26,7 +26,7 @@ const ChatListItem = (props) => {
   return (
     <div id={id} className={theme.useritem} onClick={() => handleChatItemClick(id)}>
       <img
-        src={avatar}
+        src={avatar || defaultAvatar}
         className={theme.useravatar}
         alt={name.slice(0, 1).toUpperCase()}
       />
@@ -51,7 +51,7 @@ ChatListItem.propTypes = {
 };
 
 ChatListItem.defaultProps = {
-  avatar: defaultAvatar,
+  avatar: null,
 };
 
 export default themr('ThemedChatListItem', defaultTheme, { composeTheme: 'softly' })(ChatListItem);
