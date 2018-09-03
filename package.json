@@ -1,7 +1,7 @@
 {
-  "name": "react-chat",
+  "name": "react-chat-cb",
   "sideEffects": false,
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "react chat",
   "main": "/lib/index.js",
   "scripts": {
@@ -22,6 +22,7 @@
     "@storybook/addons": "^4.0.0-alpha.10",
     "@storybook/react": "^4.0.0-alpha.10",
     "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -53,13 +54,13 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
-    "babel-eslint": "^8.2.3",
     "classnames": "^2.2.6",
-    "emoji-mart": "^2.7.0",
     "file-loader": "^1.1.11",
+    "react-css-themr": "^2.1.2"
+  },
+  "peerDependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.3.2",
-    "react-css-themr": "^2.1.2",
     "react-dom": "^16.3.2"
   },
   "config": {
